@@ -49,32 +49,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Remove="Views\LoginPage.xaml" />
-	  <MauiXaml Remove="Views\Test.xaml" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <PackageReference Include="CommunityToolkit.Mvvm" Version="7.1.2" />
 	  <PackageReference Include="Google.Apis.Core" Version="1.57.0" />
 	  <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Views\SubtasksPage.xaml.cs">
-	    <DependentUpon>SubtasksPage.xaml</DependentUpon>
-	  </Compile>
 	  <Compile Update="Views\NewTaskPage.xaml.cs">
 	    <DependentUpon>NewTaskPage.xaml</DependentUpon>
 	  </Compile>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiXaml Update="Views\SubtasksPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\NewTaskPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	</ItemGroup>
 
 </Project>
