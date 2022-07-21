@@ -5,6 +5,7 @@
              x:Class="AzureADSample.Views.SettingsPage"
              x:DataType="viewmodel:SettingsPageViewModel"
              Title="SettingsPage">
+    
     <StackLayout Spacing="10" Padding="30">
         <Label Text="Profile"
                FontSize="Medium"

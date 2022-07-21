@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AzureADSample.MainPage">
-			 
+
     <ScrollView>
         <VerticalStackLayout 
             Spacing="25" 
@@ -14,13 +14,13 @@
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
                 HeightRequest="200"
                 HorizontalOptions="Center" />
-                
+
             <Label 
                 Text="Azure AD Authentication Sample"
                 SemanticProperties.Description="Azure AD Authentication Sample"
                 FontSize="32"
                 HorizontalOptions="Center" />
-            
+
             <Label 
                 Text="By: Microsoft Interns"
                 SemanticProperties.HeadingLevel="Level2"
@@ -43,5 +43,4 @@
 
         </VerticalStackLayout>
     </ScrollView>
- 
 </ContentPage>

@@ -4,7 +4,6 @@ using AzureADSample.ViewModel;
 using AzureADSample.Views;
 using Microsoft.Identity.Client;
 using System.IdentityModel.Tokens.Jwt;
-using System.Text;
 
 namespace AzureADSample;
 
@@ -35,7 +34,7 @@ public partial class MainPage : ContentPage
                    .AcquireTokenSilent(Constants.Scopes, accounts.FirstOrDefault())
                    .ExecuteAsync();
 
-                await SecureStorage.SetAsync("Token", result?.IdToken);// store token securely for later use
+                await SecureStorage.SetAsync("Token", result?.IdToken); // store token securely for later use
                 GetUserClaims(result);
 
                 await Shell.Current.GoToAsync($"{nameof(SettingsPage)}",
