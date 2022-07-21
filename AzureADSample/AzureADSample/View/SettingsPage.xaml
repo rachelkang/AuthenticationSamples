@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:AzureADSample.ViewModel"
+             x:Class="AzureADSample.Views.SettingsPage"
+             x:DataType="viewmodel:SettingsPageViewModel"
+             Title="SettingsPage">
+    <StackLayout Spacing="10" Padding="30">
+        <Label Text="Profile"
+               FontSize="Medium"
+               TextColor="Black"
+               FontFamily="MainFont"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" />
+
+        <Label Text="{Binding User.Name, StringFormat='Name {0}'}" 
+               FontFamily="MainFont" FontAttributes="Bold" />
+        
+        <Label Text="{Binding User.Email, StringFormat='Email: {0}'}" 
+               FontFamily="MainFont" FontAttributes="Bold" />
+
+        <!--TODO-->
+        <!--Get the user to log out of the account and return back to the home page-->
+        <Button Text="Log out"
+                FontFamily="MainFont"
+                HorizontalOptions="Center"
+                Clicked="LogOutBtn"/>
+                
+    </StackLayout>
+</ContentPage>

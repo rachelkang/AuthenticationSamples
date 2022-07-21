@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AzureADSample.MainPage">
+			 
+    <ScrollView>
+        <VerticalStackLayout 
+            Spacing="25" 
+            Padding="30,0" 
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+                
+            <Label 
+                Text="Azure AD Authentication Sample"
+                SemanticProperties.Description="Azure AD Authentication Sample"
+                FontSize="32"
+                HorizontalOptions="Center" />
+            
+            <Label 
+                Text="By: Microsoft Interns"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="By Microsoft Interns"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Button 
+                x:Name="LoginBtn"
+                Text="Azure AD Login"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="AzureADPageClicked"
+                HorizontalOptions="Center" />
+
+            <Label 
+                x:Name="LoginResultLabel"
+                FontFamily="MyFont"
+                TextColor="Black"
+                FontSize="Large" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+ 
+</ContentPage>
