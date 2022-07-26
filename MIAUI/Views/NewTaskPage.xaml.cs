@@ -1,16 +1,12 @@
-﻿using MIAUI.ViewModels;
+using MIAUI.ViewModels;
 
-namespace MIAUI.View
+namespace MIAUI.Views;
+
+public partial class NewTaskPage : ContentPage
 {
-    public partial class NewTaskPage : ContentPage
-    {
-        public Model.Task Task { get; set; }
-
-        public NewTaskPage(NewItemViewModel vm)
-        {
-            InitializeComponent();
-            BindingContext = vm;
-        }
-
-    }
+	public Model.Task Task;
+	public NewTaskPage()
+	{
+		InitializeComponent();
+	}
 }
