@@ -8,5 +8,4 @@ public partial class SettingsPageViewModel : ObservableObject
 {
     [ObservableProperty]
     User user;
-
 }

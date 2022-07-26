@@ -1,4 +1,6 @@
-﻿using Microsoft.Identity.Client;
+﻿using AzureADSample.Model;
+using Microsoft.Identity.Client;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace AzureADSample.Service;
 public class AuthService
@@ -30,6 +32,23 @@ public class AuthService
         catch (MsalClientException)
         {
             return null;
+        }
+    }
+
+    // Read tokens and get claims
+    public void GetUserClaims(AuthenticationResult result, User user)
+    {
+        var token = result.IdToken;
+        if (token is not null)
+        {
+            var handler = new JwtSecurityTokenHandler();
+            var data = handler.ReadJwtToken(token);
+            var claims = data.Claims.ToList();
+            if (data is not null)
+            {
+                user.Name = data.Claims.FirstOrDefault(x => x.Type.Equals("name"))?.Value;
+                user.Email = data.Claims.FirstOrDefault(x => x.Type.Equals("preferred_username"))?.Value;
+            }
         }
     }
 

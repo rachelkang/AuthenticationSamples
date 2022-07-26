@@ -18,7 +18,6 @@ public static class MauiProgram
 		builder.Services.AddTransient<MainPage>();
 		builder.Services.AddSingleton<SettingsPage>();
 
-		builder.Services.AddSingleton<MainViewModel>();
 		builder.Services.AddSingleton<SettingsPageViewModel>();
 
 		return builder.Build();

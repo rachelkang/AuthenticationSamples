@@ -1,9 +1,7 @@
 ﻿using AzureADSample.Model;
 using AzureADSample.Service;
-using AzureADSample.ViewModel;
 using AzureADSample.Views;
 using Microsoft.Identity.Client;
-using System.IdentityModel.Tokens.Jwt;
 
 namespace AzureADSample;
 
@@ -11,10 +9,9 @@ public partial class MainPage : ContentPage
 {
     AuthService authService;
     User user;
-    public MainPage(MainViewModel vm)
+    public MainPage()
     {
         InitializeComponent();
-        BindingContext = vm;
         authService = new AuthService();
         user = new User();
     }
@@ -35,13 +32,14 @@ public partial class MainPage : ContentPage
                    .ExecuteAsync();
 
                 await SecureStorage.SetAsync("Token", result?.IdToken); // store token securely for later use
-                GetUserClaims(result);
-
+                authService.GetUserClaims(result, user);
+                await DisplayAlert("Sucessful Logged in", "Existing account exist", "Ok");
                 await Shell.Current.GoToAsync($"{nameof(SettingsPage)}",
                 new Dictionary<string, object>
                 {
                     [nameof(User)] = user
                 });
+                await DisplayAlert($"Welcome back {user.Name}", "", "Ok");
             }
         }
         catch
@@ -57,41 +55,17 @@ public partial class MainPage : ContentPage
     async void AzureADPageClicked(object sender, EventArgs e)
     {
         var result = await authService.LoginAsync(CancellationToken.None);
-        var token = result?.IdToken;
-        if (token is not null)
-        {
-            var handler = new JwtSecurityTokenHandler();
-            var data = handler.ReadJwtToken(token);
-            var claims = data.Claims.ToList();
-            await SecureStorage.SetAsync("token", token); // store token securely for later use v
-            if (data is not null)
-            {
-                user.Name = data.Claims.FirstOrDefault(x => x.Type.Equals("name"))?.Value;
-                user.Email = data.Claims.FirstOrDefault(x => x.Type.Equals("preferred_username"))?.Value;
-                await Shell.Current.GoToAsync($"{nameof(SettingsPage)}",
-                new Dictionary<string, object>
-                {
-                    [nameof(User)] = user
-                });
-            }
-        }
-    }
+        authService.GetUserClaims(result, user);
 
-    // If there's an existing account
-    // get the claims
-    void GetUserClaims(AuthenticationResult result)
-    {
-        var token = result.IdToken;
-        if (token is not null)
+        if (result is not null)
         {
-            var handler = new JwtSecurityTokenHandler();
-            var data = handler.ReadJwtToken(token);
-            var claims = data.Claims.ToList();
-            if (data is not null)
+            await DisplayAlert("Sucessful", "Successfully logged in", "Ok");
+            await Shell.Current.GoToAsync($"{nameof(SettingsPage)}",
+            new Dictionary<string, object>
             {
-                user.Name = data.Claims.FirstOrDefault(x => x.Type.Equals("name"))?.Value;
-                user.Email = data.Claims.FirstOrDefault(x => x.Type.Equals("preferred_username"))?.Value;
-            }
+                [nameof(User)] = user
+            });
+            await DisplayAlert($"Welcome {user.Name}", "", "Ok");
         }
     }
 }
