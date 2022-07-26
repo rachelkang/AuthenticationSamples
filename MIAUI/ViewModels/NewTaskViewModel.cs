@@ -1,4 +1,5 @@
 ﻿using MIAUI.Model;
+using System.Collections.ObjectModel;
 
 namespace MIAUI.ViewModels
 {
@@ -9,7 +10,7 @@ namespace MIAUI.ViewModels
 
         public NewItemViewModel()
         {
-            SaveCommand = new Command(OnSave, ValidateSave);
+            SaveCommand = new Command(OnSave, ValidateSave); //use Async command
             CancelCommand = new Command(OnCancel);
             this.PropertyChanged +=
                 (_, __) => SaveCommand.ChangeCanExecute();
@@ -43,7 +44,7 @@ namespace MIAUI.ViewModels
 
         private async void OnSave()
         {
-            List<Subtask> subtaskList = new List<Subtask> ();
+            ObservableCollection<Subtask> subtaskList = new ();
             string[] subtaskStringList = (Subtasks ?? String.Empty).Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
             foreach (string subtaskString in subtaskStringList)
                 subtaskList.Add(new Subtask { SubtaskItem = subtaskString });
