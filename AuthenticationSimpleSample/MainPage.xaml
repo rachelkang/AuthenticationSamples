@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AuthenticationSimpleSample.MainPage"
+             BackgroundColor="{StaticResource WindowBackgroundColor}">
+
+    <ScrollView>
+        <VerticalStackLayout 
+            Spacing="25" 
+            Padding="30, 0" 
+            VerticalOptions="Center">
+
+            <Label x:Name="Title"
+                   Text="Simple Authentication Sample"
+                   TextColor="Black"
+                   FontFamily="MainFont"
+                   HorizontalOptions="Center" />
+
+            <Label x:Name="Description"
+                   Text="By: Microsoft Interns"
+                   FontAttributes="Italic"
+                   FontSize="Micro"
+                   FontFamily="MainFont"
+                   TextColor="Black"
+                   HorizontalOptions="Center" />
+
+            <!--This button will open a buit-in page from Microsoft AD-->
+            <Button x:Name="LoginResultLabel"
+                    Text="Login"
+                    FontFamily="MainFont"
+                    BackgroundColor="{StaticResource MainColor}"
+                    SemanticProperties.Hint="Authentication Button"
+                    Clicked="AzureADPageClicked"
+                    HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
