@@ -2,9 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodel="clr-namespace:AzureADSample.ViewModel"
-             x:Class="AzureADSample.Views.SettingsPage"
-             x:DataType="viewmodel:SettingsPageViewModel"
-             Title="SettingsPage">
+             x:Class="AzureADSample.Views.ProfilePage"
+             x:DataType="viewmodel:ProfilePageViewModel"
+             Title="ProfilePage">
+    <!--Disable Back Button-->
+    <Shell.BackButtonBehavior >
+        <BackButtonBehavior IsEnabled="False" IsVisible="False" />
+    </Shell.BackButtonBehavior>
     
     <StackLayout Spacing="10" Padding="30">
         <Label Text="Profile"

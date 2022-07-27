@@ -19,7 +19,7 @@
                 Text="Azure AD Authentication Sample"
                 SemanticProperties.Description="Azure AD Authentication Sample"
                 FontSize="32"
-                HorizontalOptions="Center" />
+                HorizontalTextAlignment="Center" />
 
             <Label 
                 Text="By: Microsoft Interns"

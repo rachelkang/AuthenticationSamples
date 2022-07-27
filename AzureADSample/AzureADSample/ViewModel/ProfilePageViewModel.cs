@@ -4,7 +4,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 namespace AzureADSample.ViewModel;
 
 [QueryProperty(nameof(User), nameof(User))]
-public partial class SettingsPageViewModel : ObservableObject
+public partial class ProfilePageViewModel : ObservableObject
 {
     [ObservableProperty]
     User user;

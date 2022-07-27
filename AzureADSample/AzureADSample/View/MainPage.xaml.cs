@@ -16,35 +16,30 @@ public partial class MainPage : ContentPage
         user = new User();
     }
 
-    // If an existing account already exist
+    // Check that there's an existing account
+    // Attempt to get token silently for the account from the user token cache 
     // then direct the user to the settigns page
     protected override async void OnAppearing()
     {
-        try
-        {
-            var accounts = await AuthService.authenticationClient.GetAccountsAsync();
-            AuthenticationResult result;
+     
+        var accounts = await AuthService.authenticationClient.GetAccountsAsync();
+        AuthenticationResult result;
 
-            if (accounts.Count() >= 1)
+        if (accounts.Count() >= 1)
+        {
+            result = await AuthService.authenticationClient
+                .AcquireTokenSilent(Constants.Scopes, accounts.FirstOrDefault())
+                .ExecuteAsync();
+
+            await SecureStorage.SetAsync("Token", result?.IdToken); // store token securely for later use
+            authService.GetUserClaims(result, user);
+            await DisplayAlert("Sucessful Logged in", "Existing account exist", "Ok");
+            await Shell.Current.GoToAsync($"{nameof(ProfilePage)}",
+            new Dictionary<string, object>
             {
-                result = await AuthService.authenticationClient
-                   .AcquireTokenSilent(Constants.Scopes, accounts.FirstOrDefault())
-                   .ExecuteAsync();
-
-                await SecureStorage.SetAsync("Token", result?.IdToken); // store token securely for later use
-                authService.GetUserClaims(result, user);
-                await DisplayAlert("Sucessful Logged in", "Existing account exist", "Ok");
-                await Shell.Current.GoToAsync($"{nameof(SettingsPage)}",
-                new Dictionary<string, object>
-                {
-                    [nameof(User)] = user
-                });
-                await DisplayAlert($"Welcome back {user.Name}", "", "Ok");
-            }
-        }
-        catch
-        {
-            // Do nothing - the user isn't logged in
+                [nameof(User)] = user
+            });
+            await DisplayAlert($"Welcome back {user.Name}", "", "Ok");
         }
     }
 
@@ -59,8 +54,8 @@ public partial class MainPage : ContentPage
 
         if (result is not null)
         {
-            await DisplayAlert("Sucessful", "Successfully logged in", "Ok");
-            await Shell.Current.GoToAsync($"{nameof(SettingsPage)}",
+            await DisplayAlert("Success", "Successfully logged in", "Ok");
+            await Shell.Current.GoToAsync($"{nameof(ProfilePage)}",
             new Dictionary<string, object>
             {
                 [nameof(User)] = user
