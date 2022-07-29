@@ -21,25 +21,31 @@ public partial class MainPage : ContentPage
     // then direct the user to the settigns page
     protected override async void OnAppearing()
     {
-     
-        var accounts = await AuthService.authenticationClient.GetAccountsAsync();
-        AuthenticationResult result;
-
-        if (accounts.Count() >= 1)
+        try
         {
-            result = await AuthService.authenticationClient
-                .AcquireTokenSilent(Constants.Scopes, accounts.FirstOrDefault())
-                .ExecuteAsync();
+            var accounts = await AuthService.authenticationClient.GetAccountsAsync();
+            AuthenticationResult result;
 
-            await SecureStorage.SetAsync("Token", result?.IdToken); // store token securely for later use
-            authService.GetUserClaims(result, user);
-            await DisplayAlert("Sucessful Logged in", "Existing account exist", "Ok");
-            await Shell.Current.GoToAsync($"{nameof(ProfilePage)}",
-            new Dictionary<string, object>
+            if (accounts.Count() >= 1)
             {
-                [nameof(User)] = user
-            });
-            await DisplayAlert($"Welcome back {user.Name}", "", "Ok");
+                result = await AuthService.authenticationClient
+                    .AcquireTokenSilent(Constants.Scopes, accounts.FirstOrDefault())
+                    .ExecuteAsync();
+
+                await SecureStorage.SetAsync("Token", result?.IdToken); // store token securely for later use
+                authService.GetUserClaims(result, user);
+                await DisplayAlert("Sucessful Logged in", "Existing account exist", "Ok");
+                await Shell.Current.GoToAsync($"{nameof(ProfilePage)}",
+                new Dictionary<string, object>
+                {
+                    [nameof(User)] = user
+                });
+                await DisplayAlert($"Welcome back {user.Name}", "", "Ok");
+            }
+        }
+        catch (MsalUiRequiredException e)
+        {
+            Console.WriteLine("Token doesn't exist in the cache or is expired");
         }
     }
 
