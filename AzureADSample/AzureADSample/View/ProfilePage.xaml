@@ -4,7 +4,7 @@
              xmlns:viewmodel="clr-namespace:AzureADSample.ViewModel"
              x:Class="AzureADSample.Views.ProfilePage"
              x:DataType="viewmodel:ProfilePageViewModel"
-             Title="ProfilePage">
+             Title="Profile Page">
     <!--Disable Back Button-->
     <Shell.BackButtonBehavior >
         <BackButtonBehavior IsEnabled="False" IsVisible="False" />

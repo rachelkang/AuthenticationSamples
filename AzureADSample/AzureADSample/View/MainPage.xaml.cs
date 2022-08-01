@@ -34,13 +34,17 @@ public partial class MainPage : ContentPage
 
                 await SecureStorage.SetAsync("Token", result?.IdToken); // store token securely for later use
                 authService.GetUserClaims(result, user);
-                await DisplayAlert("Sucessful Logged in", "Existing account exist", "Ok");
-                await Shell.Current.GoToAsync($"{nameof(ProfilePage)}",
-                new Dictionary<string, object>
+                bool userInput = await DisplayAlert("Existing account detected",$"Would you like to log back in as {user.Name}", "Yes", "No");
+
+                if (userInput is true)
                 {
-                    [nameof(User)] = user
-                });
-                await DisplayAlert($"Welcome back {user.Name}", "", "Ok");
+                    await Shell.Current.GoToAsync($"{nameof(ProfilePage)}",
+                    new Dictionary<string, object>
+                    {
+                        [nameof(User)] = user
+                    });
+                    await DisplayAlert($"Welcome back {user.Name}", "", "Ok");
+                }
             }
         }
         catch (MsalUiRequiredException e)
