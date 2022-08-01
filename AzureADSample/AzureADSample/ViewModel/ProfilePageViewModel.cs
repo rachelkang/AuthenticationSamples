@@ -1,5 +1,7 @@
 ﻿using AzureADSample.Model;
+using AzureADSample.Service;
 using CommunityToolkit.Mvvm.ComponentModel;
+using Microsoft.Identity.Client;
 
 namespace AzureADSample.ViewModel;
 
@@ -8,4 +10,5 @@ public partial class ProfilePageViewModel : ObservableObject
 {
     [ObservableProperty]
     User user;
+    
 }
