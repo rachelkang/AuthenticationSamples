@@ -18,7 +18,7 @@ using Task = System.Threading.Tasks.Task;
 
 namespace MIAUI.ViewModels
 {
-    internal partial class TasksViewModel : BaseViewModel
+    public partial class TasksViewModel : BaseViewModel
     {
         public TasksViewModel()
         {

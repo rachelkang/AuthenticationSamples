@@ -22,7 +22,7 @@ namespace MIAUI.ViewModels
         }
 
         [ICommand]
-        void Add()
+        void AddDetails()
         {
             if (string.IsNullOrWhiteSpace(details))
                 return;

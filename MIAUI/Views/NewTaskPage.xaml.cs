@@ -5,9 +5,9 @@ namespace MIAUI.Views;
 public partial class NewTaskPage : ContentPage
 {
 	public Model.Task Task;
-	public NewTaskPage(BaseViewModel vm)
+	public NewTaskPage()
 	{
 		InitializeComponent();
-		BindingContext = vm;
+		BindingContext = new TasksViewModel();
 	}
 }
