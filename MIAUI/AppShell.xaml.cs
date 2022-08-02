@@ -1,4 +1,6 @@
-﻿namespace MIAUI;
+﻿using MIAUI.Views;
+
+namespace MIAUI;
 
 public partial class AppShell : Shell
 {

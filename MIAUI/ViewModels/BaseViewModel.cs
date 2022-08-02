@@ -9,28 +9,20 @@ using MIAUI.Model;
 using MIAUI.Services;
 //using static Android.Content.ClipData;
 using Google.Apis;
+using CommunityToolkit.Mvvm.ComponentModel;
+using System.Collections.ObjectModel;
+using CommunityToolkit.Mvvm.Input;
+using System.Threading.Tasks;
+using MIAUI.Views;
+using Task = System.Threading.Tasks.Task;
 
 namespace MIAUI.ViewModels
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public partial class BaseViewModel : ObservableObject
     {
-        public IDataStore<Model.Task> DataStore => DependencyService.Get<IDataStore<Model.Task>>();
+       
 
-        bool isBusy = false;
-        public bool IsBusy
-        {
-            get { return isBusy; }
-            set { SetProperty(ref isBusy, value); }
-        }
-
-        string title = string.Empty;
-        public string Title
-        {
-            get { return title; }
-            set { SetProperty(ref title, value); }
-        }
-
-        protected bool SetProperty<T>(ref T backingStore, T value,
+        /*protected bool SetProperty<T>(ref T backingStore, T value,
             [CallerMemberName] string propertyName = "",
             Action onChanged = null)
         {
@@ -41,8 +33,8 @@ namespace MIAUI.ViewModels
             onChanged?.Invoke();
             OnPropertyChanged(propertyName);
             return true;
-        }
-
+        }*/
+/*
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
@@ -53,6 +45,6 @@ namespace MIAUI.ViewModels
 
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        #endregion
+        #endregion*/
     }
 }
