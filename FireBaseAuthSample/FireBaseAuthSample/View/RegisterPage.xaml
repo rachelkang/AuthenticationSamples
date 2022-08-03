@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:FireBaseAuthSample.ViewModel"
+             x:Class="FireBaseAuthSample.View.RegisterPage"
+             Title="RegisterPage"
+             x:DataType="viewmodel:RegisterPageViewModel">
+    <StackLayout>
+        <Entry 
+                Placeholder="First Name"
+                Text="{Binding User.FirstName}"
+                TextColor="Black"
+                HorizontalOptions="Center" />
+
+        <Entry 
+                Placeholder="Last Name"
+                Text="{Binding User.LastName}"
+                TextColor="Black"
+                HorizontalOptions="Center" />
+
+        <Entry 
+                x:Name="ProfileEmail"
+                Placeholder="Email"
+                Text="{Binding User.Email}"
+                TextColor="Black"
+                HorizontalOptions="Center" />
+
+        <Entry 
+                x:Name="ProfilePassword"
+                Placeholder="Password"
+                IsPassword="True"
+                Text="{Binding User.Password}"
+                TextColor="Black"
+                HorizontalOptions="Center" />
+
+        <Button
+            x:Name="RegisterBtn"
+            Text="Register"
+            Command="{Binding RegisterUserCommand}" />
+
+        <!--<Button
+                Text="Register"
+                TextColor="White"
+                BackgroundColor="Black"
+                FontAttributes="Bold"
+                Command="{Binding CreatePerson}"
+                HorizontalOptions="Center"
+                Clicked="PasswordValidator"/> -->
+    </StackLayout>
+</ContentPage>
