@@ -18,14 +18,13 @@ public partial class TasksViewModel
     ObservableCollection<string> items;
 
     [ObservableProperty]
-    string taskName; //Task's title
+    string taskName;
 
     [ICommand]
     void Add()
     {
         if (string.IsNullOrWhiteSpace(TaskName))
             return;
-        //add TaskName
         Items.Add(TaskName);
         TaskName = string.Empty;
     }

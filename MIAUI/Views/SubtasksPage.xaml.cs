@@ -4,9 +4,9 @@ namespace MIAUI.Views;
 
 public partial class SubtasksPage : ContentPage
 {
-	public SubtasksPage(SubtasksViewModel vm)
+	public SubtasksPage()
 	{
 		InitializeComponent();
-		BindingContext = vm;
+		BindingContext = new SubtasksViewModel();
 	}
 }

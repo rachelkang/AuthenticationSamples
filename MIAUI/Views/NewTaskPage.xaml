@@ -24,7 +24,6 @@
 
         <Image Grid.ColumnSpan="2"
                Source="dotnet_bot.png"/>
-
         <Entry Placeholder="Enter task"
                Text="{Binding TaskName}"
                Grid.Row="1"/>

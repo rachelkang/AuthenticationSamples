@@ -7,7 +7,7 @@ public partial class AppShell : Shell
 	public AppShell()
 	{
 		InitializeComponent();
-		Routing.RegisterRoute(nameof(SubtasksPage), typeof(SubtasksPage)); //Go to Subtasks
+		Routing.RegisterRoute(nameof(SubtasksPage), typeof(SubtasksPage));
 
 	}
 }
