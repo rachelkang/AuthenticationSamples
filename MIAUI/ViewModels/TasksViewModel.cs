@@ -1,10 +1,4 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System.Collections.ObjectModel;
-using CommunityToolkit.Mvvm.Input;
-using MIAUI.Views;
-using Task = System.Threading.Tasks.Task;
-
-namespace MIAUI.ViewModels;
+﻿namespace MIAUI.ViewModels;
 
 [INotifyPropertyChanged]
 public partial class TasksViewModel

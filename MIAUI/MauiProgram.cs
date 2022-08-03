@@ -1,7 +1,4 @@
-﻿using MIAUI.ViewModels;
-using MIAUI.Views;
-
-namespace MIAUI;
+﻿namespace MIAUI;
 
 public static class MauiProgram
 {

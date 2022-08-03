@@ -1,5 +1,3 @@
-using MIAUI.ViewModels;
-
 namespace MIAUI.Views;
 
 public partial class NewTaskPage : ContentPage

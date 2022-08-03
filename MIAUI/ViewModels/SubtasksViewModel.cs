@@ -1,7 +1,4 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
-
-namespace MIAUI.ViewModels;
+﻿namespace MIAUI.ViewModels;
 
 [INotifyPropertyChanged]
 public partial class SubtasksViewModel
