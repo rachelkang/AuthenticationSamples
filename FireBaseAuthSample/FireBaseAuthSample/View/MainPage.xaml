@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:FireBaseAuthSample.ViewModel"
+             x:Class="FireBaseAuthSample.MainPage"
+             x:DataType="viewmodel:LoginPageViewModel">
+
+    <ScrollView>
+        <VerticalStackLayout 
+            Spacing="25" 
+            Padding="30,0" 
+            VerticalOptions="Center">
+
+            <Label
+                Text="Authentication Sample"
+                FontSize="Large"
+                FontAttributes="Bold"
+                TextColor="Black"
+                SemanticProperties.Description="Register Label"
+                HorizontalOptions="Center" />
+
+            <Entry 
+                x:Name="ProfileEmail"
+                Placeholder="Email"
+                Text="{Binding User.Email}"
+                TextColor="Black"
+                HorizontalOptions="Center" />
+
+            <Entry 
+                x:Name="ProfilePassword"
+                Placeholder="Password"
+                IsPassword="True"
+                Text="{Binding User.Password}"
+                TextColor="Black"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="LoginBtn"
+                Text="Log in"
+                Command="{Binding LogInCommand}"/>
+
+            <Button
+                x:Name="RegisterBtn"
+                Text="Register"
+                Command="{Binding RegisterBtnCommand}"/>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
