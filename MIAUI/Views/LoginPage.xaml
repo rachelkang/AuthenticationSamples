@@ -7,7 +7,7 @@
              x:DataType="viewmodel:LoginViewModel">
     <VerticalStackLayout Spacing="10">
         <Label 
-            Text="It's MIAU or NEVER"
+            Text="It's MIAU or NEVER!"
             VerticalOptions="Center" 
             HorizontalOptions="Center"/>
         <Image Source="dotnet_bot.svg"/>
@@ -25,7 +25,7 @@
                 />
         <StackLayout Orientation="Horizontal">
             <!-- Tentative pop-up window for explanation/credits? -->
-            <Label Text="First time?" TextColor="Gray" HorizontalTextAlignment="Center" />
+            <Label Text="First time? " TextColor="Gray" HorizontalTextAlignment="Center" />
             <Label Text="Click here" TextColor="Purple" HorizontalTextAlignment="Center"/>
         </StackLayout>
     </VerticalStackLayout>
