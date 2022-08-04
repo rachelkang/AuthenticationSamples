@@ -59,6 +59,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\LoginPage.xaml.cs">
+	    <DependentUpon>LoginPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\SubtasksPage.xaml.cs">
 	    <DependentUpon>SubtasksPage.xaml</DependentUpon>
 	  </Compile>
