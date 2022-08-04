@@ -12,7 +12,7 @@ namespace MIAUI.ViewModels
         [ICommand]
         async Task OnLoginClicked()
         {
-            await Shell.Current.GoToAsync(nameof(NewTaskPage));
+            //await Shell.Current.GoToAsync(nameof(NewTaskPage));
         }
     }
 }
