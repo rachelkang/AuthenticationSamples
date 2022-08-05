@@ -25,14 +25,14 @@
         <Image Grid.ColumnSpan="2"
                Source="dotnet_bot.png"/>
         <Entry Placeholder="Enter task"
-               Text="{Binding TaskName}"
+               Text="{Binding Task}"
                Grid.Row="1"/>
         <Button Text="Add"
                 Grid.Row="1"
                 Grid.Column="1"
                 Command="{Binding AddCommand}"/>
         <CollectionView Grid.Row="2" Grid.ColumnSpan="2"
-                        ItemsSource="{Binding Items}"
+                        ItemsSource="{Binding ListOfItems}"
                         SelectionMode="None">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="{x:Type x:String}">

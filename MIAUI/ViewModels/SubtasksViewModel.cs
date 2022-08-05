@@ -6,13 +6,13 @@ public partial class SubtasksViewModel
     [ObservableProperty]
     string details;
 
-    [ICommand] 
+    [RelayCommand] 
     async Task GoBack()
     {
         await Shell.Current.GoToAsync("..");
     }
 
-    [ICommand]
+    [RelayCommand]
     void AddDetails()
     {
         if (string.IsNullOrWhiteSpace(details))

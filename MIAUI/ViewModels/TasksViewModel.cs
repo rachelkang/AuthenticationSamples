@@ -5,34 +5,34 @@ public partial class TasksViewModel
 {
     public TasksViewModel()
     {
-        Items = new ObservableCollection<string>();
+        listOfItems = new ObservableCollection<string>();
     }
 
     [ObservableProperty]
-    ObservableCollection<string> items;
+    ObservableCollection<string> listOfItems;
 
     [ObservableProperty]
-    string taskName;
+    string task;
 
-    [ICommand]
+    [RelayCommand]
     void Add()
     {
-        if (string.IsNullOrWhiteSpace(TaskName))
+        if (string.IsNullOrWhiteSpace(task))
             return;
-        Items.Add(TaskName);
-        TaskName = string.Empty;
+        listOfItems.Add(task);
+        task = string.Empty;
     }
 
-    [ICommand]
+    [RelayCommand]
     void Delete(string s)
     {
-        if (Items.Contains(s))
+        if (listOfItems.Contains(s))
         {
-            Items.Remove(s);
+            listOfItems.Remove(s);
         }
     }
 
-    [ICommand]
+    [RelayCommand]
     async Task Tap(string s)
     {
         await Shell.Current.GoToAsync($"{nameof(SubtasksPage)}?Text{s}");
