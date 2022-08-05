@@ -6,7 +6,6 @@ namespace MIAUI.ViewModels;
 [QueryProperty("TaskName", "TaskName")]
 public partial class SubtasksViewModel
 {
-
     public SubtasksViewModel()
     {
         Details = new ObservableCollection<Subtask>();
@@ -21,13 +20,13 @@ public partial class SubtasksViewModel
     [ObservableProperty]
     string detailsInfo;
 
-    [ICommand]
+    [RelayCommand]
     async Task GoBack(string details)
     {
         await Shell.Current.GoToAsync($"..?DetailsInfo={details}");
     }
 
-    [ICommand]
+    [RelayCommand]
     void SaveDetails()
     {
         Details.Clear();

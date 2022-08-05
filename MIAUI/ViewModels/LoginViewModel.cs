@@ -1,18 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MIAUI.Model;
+using MIAUI.Service;
 
-namespace MIAUI.ViewModels
+namespace MIAUI.ViewModels;
+
+public partial class LoginViewModel : ObservableObject
 {
-    [INotifyPropertyChanged]
-    public partial class LoginViewModel
+    AuthService authService;
+    User user;
+    public LoginViewModel()
     {
-        [ICommand]
-        async Task OnLoginClicked()
+        authService = new AuthService();
+        user = new User();
+    }
+
+    [RelayCommand]
+    async void LogIn()
+    {
+        try
         {
-            //await Shell.Current.GoToAsync(nameof(NewTaskPage));
+            var result = await authService.LoginAsync(CancellationToken.None);
+            authService.GetUserClaims(result, user);
+
+            if (result is not null)
+            {
+                await App.Current.MainPage.DisplayAlert("Success", "Successfully logged in", "Ok");
+                await Shell.Current.GoToAsync($"{nameof(NewTaskPage)}",
+                new Dictionary<string, object>
+                {
+                    [nameof(User)] = user
+                });
+                await App.Current.MainPage.DisplayAlert($"Welcome {user.Name}", "", "Ok");
+            }
+        }
+        catch(Exception e)
+        {
+            await App.Current.MainPage.DisplayAlert("Alert", "Please log in to continue", "Ok");
         }
     }
 }
