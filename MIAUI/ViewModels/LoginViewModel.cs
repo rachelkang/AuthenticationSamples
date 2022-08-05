@@ -13,23 +13,28 @@ public partial class LoginViewModel : ObservableObject
         user = new User();
     }
 
-
     [RelayCommand]
     async void LogIn()
     {
-        var result = await authService.LoginAsync(CancellationToken.None);
-        authService.GetUserClaims(result, user);
-
-        if (result is not null)
+        try
         {
-            await App.Current.MainPage.DisplayAlert("Success", "Successfully logged in", "Ok");
-            await Shell.Current.GoToAsync($"{nameof(NewTaskPage)}",
-            new Dictionary<string, object>
+            var result = await authService.LoginAsync(CancellationToken.None);
+            authService.GetUserClaims(result, user);
+
+            if (result is not null)
             {
-                [nameof(User)] = user
-            });
-            await App.Current.MainPage.DisplayAlert($"Welcome {user.Name}", "", "Ok");
+                await App.Current.MainPage.DisplayAlert("Success", "Successfully logged in", "Ok");
+                await Shell.Current.GoToAsync($"{nameof(NewTaskPage)}",
+                new Dictionary<string, object>
+                {
+                    [nameof(User)] = user
+                });
+                await App.Current.MainPage.DisplayAlert($"Welcome {user.Name}", "", "Ok");
+            }
+        }
+        catch(Exception e)
+        {
+            await App.Current.MainPage.DisplayAlert("Alert", "Please log in to continue", "Ok");
         }
     }
-    
 }
