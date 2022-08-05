@@ -1,25 +1,38 @@
 ﻿namespace MIAUI.ViewModels;
 
 [INotifyPropertyChanged]
+[QueryProperty("TaskName", "TaskName")]
 public partial class SubtasksViewModel
 {
-    [ObservableProperty]
-    string details;
 
-    [ICommand] 
-    async Task GoBack()
+    public SubtasksViewModel()
+    {
+        Details = new ObservableCollection<string>();
+    }
+
+    [ObservableProperty]
+    ObservableCollection<string> details;
+
+    [ObservableProperty]
+    string taskName;
+
+    [ObservableProperty]
+    string detailsInfo;
+
+    [ICommand]
+    async Task GoBack(string d)
     {
         await Shell.Current.GoToAsync("..");
     }
 
     [ICommand]
-    void AddDetails()
+    void SaveDetails()
     {
-        if (string.IsNullOrWhiteSpace(details))
+        if (string.IsNullOrWhiteSpace(DetailsInfo))
             return;
         //add TaskName
-        //Items.Add(SubtaskName);
-        //TaskName = string.Empty;
+        Details.Add(DetailsInfo);
+        DetailsInfo = string.Empty;
     }
 
 }
