@@ -2,6 +2,7 @@
 
 
 [INotifyPropertyChanged]
+[QueryProperty("DetailsInfo", "DetailsInfo")]
 public partial class TasksViewModel
 {
     public TasksViewModel()
@@ -14,6 +15,9 @@ public partial class TasksViewModel
 
     [ObservableProperty]
     string taskName;
+
+    [ObservableProperty]
+    string detailsInfo;
 
     [ICommand]
     void Add()
@@ -43,5 +47,6 @@ public partial class TasksViewModel
     {
         await Shell.Current.GoToAsync($"{nameof(SubtasksPage)}?TaskName={s}");
     }
+
 }
 

@@ -10,9 +10,19 @@
             Placeholder ="Details"
             Text="{Binding DetailsInfo}"
             Grid.Row="1"/>
-        <Label
-            Text="{Binding DetailsInfo}"
-            FontSize="24" />
+        <StackLayout>
+           <CollectionView Grid.Row="2" Grid.ColumnSpan="2"
+                        ItemsSource="{Binding Details}"
+                        SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="viewmodel:SubtasksViewModel">
+                        <Label
+                        Text="{Binding DetailsInfo}"
+                        FontSize="24" />
+                      </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView> 
+        </StackLayout>
         <!--" VerticalOptions="Center" 
             HorizontalOptions="Center"/> -->
         <Button Text="Save"

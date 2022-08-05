@@ -8,7 +8,13 @@ namespace MIAUI.Model
 {
     public class Subtask
     {
-        public string SubtaskItem { get; set; }
-        public bool SubtaskChecked { get; set; }
+        public string DetailsInfo {get; set;}
+        public ObservableCollection<Subtask> Details { get; set; }
+
+        public Subtask(string detailsInfo)
+        {
+            DetailsInfo = detailsInfo;
+            Details = new ObservableCollection<Subtask>();
+;       }
     }
 }

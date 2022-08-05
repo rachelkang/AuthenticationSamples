@@ -1,4 +1,6 @@
-﻿namespace MIAUI.ViewModels;
+﻿using MIAUI.Model;
+
+namespace MIAUI.ViewModels;
 
 [INotifyPropertyChanged]
 [QueryProperty("TaskName", "TaskName")]
@@ -7,11 +9,11 @@ public partial class SubtasksViewModel
 
     public SubtasksViewModel()
     {
-        Details = new ObservableCollection<string>();
+        Details = new ObservableCollection<Subtask>();
     }
 
     [ObservableProperty]
-    ObservableCollection<string> details;
+    ObservableCollection<Subtask> details;
 
     [ObservableProperty]
     string taskName;
@@ -20,19 +22,20 @@ public partial class SubtasksViewModel
     string detailsInfo;
 
     [ICommand]
-    async Task GoBack(string d)
+    async Task GoBack(string details)
     {
-        await Shell.Current.GoToAsync("..");
+        await Shell.Current.GoToAsync($"..?DetailsInfo={details}");
     }
 
     [ICommand]
     void SaveDetails()
     {
+        Details.Clear();
         if (string.IsNullOrWhiteSpace(DetailsInfo))
             return;
         //add TaskName
-        Details.Add(DetailsInfo);
-        DetailsInfo = string.Empty;
+        Details.Add(new Subtask(DetailsInfo));
+        //@DetailsInfo = string.Empty;
     }
 
 }
