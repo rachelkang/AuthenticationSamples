@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MIAUI.Views.LoginPage"
-             Title="LoginPage"
              xmlns:viewmodel="clr-namespace:MIAUI.ViewModels"
-             x:DataType="viewmodel:LoginViewModel">
+             x:Class="MIAUI.Views.MainLoginPage"
+             x:DataType="viewmodel:LoginViewModel"
+             Title="Login Page">
+    
     <VerticalStackLayout Spacing="10">
         <Label 
             Text="It's MIAU or NEVER!"
             VerticalOptions="Center" 
             HorizontalOptions="Center"/>
+        
         <Image Source="dotnet_bot.svg"/>
+        
         <Label Text="Welcome to MIAUI!" 
                FontSize="28" TextColor="Gray" 
                HorizontalTextAlignment="Center"/>
+        
         <Label Text="What will you accomplish today?" 
                FontSize="18" TextColor="Gray" 
                HorizontalTextAlignment="Center"/>
+        
         <Button Text="Sign in" 
                 HorizontalOptions="Center" 
                 CornerRadius="16"
-                Command="{Binding OnLoginClickedCommand}"
-                BackgroundColor="Purple"
+                Command="{Binding LogInCommand}"
+                BackgroundColor="{StaticResource MainColor}"
                 />
         <StackLayout Orientation="Horizontal">
             <!-- Tentative pop-up window for explanation/credits? -->
             <Label Text="First time? " TextColor="Gray" HorizontalTextAlignment="Center" />
             <Label Text="Click here" TextColor="Purple" HorizontalTextAlignment="Center"/>
         </StackLayout>
+        
     </VerticalStackLayout>
 </ContentPage>

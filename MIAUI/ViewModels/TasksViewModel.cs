@@ -15,7 +15,7 @@ public partial class TasksViewModel
     [ObservableProperty]
     string taskName;
 
-    [ICommand]
+    [RelayCommand]
     void Add()
     {
 
@@ -27,7 +27,7 @@ public partial class TasksViewModel
 
     }
 
-    [ICommand]
+    [RelayCommand]
 
     //This delete method needs to interact with the database
     void Delete(string s)
@@ -38,7 +38,7 @@ public partial class TasksViewModel
         }*/
     }
 
-    [ICommand]
+    [RelayCommand]
     async Task Tap(string s)
     {
         await Shell.Current.GoToAsync($"{nameof(SubtasksPage)}?TaskName={s}");

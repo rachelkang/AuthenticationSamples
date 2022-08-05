@@ -4,7 +4,6 @@
 [QueryProperty("TaskName", "TaskName")]
 public partial class SubtasksViewModel
 {
-
     public SubtasksViewModel()
     {
         Details = new ObservableCollection<string>();
@@ -19,13 +18,13 @@ public partial class SubtasksViewModel
     [ObservableProperty]
     string detailsInfo;
 
-    [ICommand]
+    [RelayCommand]
     async Task GoBack(string d)
     {
         await Shell.Current.GoToAsync("..");
     }
 
-    [ICommand]
+    [RelayCommand]
     void SaveDetails()
     {
         if (string.IsNullOrWhiteSpace(DetailsInfo))
