@@ -6,6 +6,7 @@
              Title="New Task"
              Visual="Material"
              xmlns:viewmodel="clr-namespace:MIAUI.ViewModels"
+             xmlns:model="clr-namespace:MIAUI.Model"
              x:DataType="viewmodel:TasksViewModel">
     <ContentPage.Content>
         <StackLayout>
@@ -35,23 +36,24 @@
                         ItemsSource="{Binding Items}"
                         SelectionMode="None">
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="{x:Type x:String}">
+                <DataTemplate x:DataType="model:Task">
                     <SwipeView>
                         <SwipeView.RightItems>
                             <SwipeItems>
+                                ,
                                 <SwipeItem Text="Delete"
                                        BackgroundColor="Red"
                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:TasksViewModel}}, Path=DeleteCommand}"
-                                       CommandParameter="{Binding .}"/>
+                                       CommandParameter="{Binding TaskName}"/>
                             </SwipeItems>
                         </SwipeView.RightItems>
                         <Grid Padding="0.5">
                             <Frame>
                                 <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:TasksViewModel}}, Path=TapCommand}"
-                                       CommandParameter="{Binding .}"/>
+                                       CommandParameter="{Binding TaskName}"/>
                                 </Frame.GestureRecognizers>
-                                <Label Text="{Binding .}"
+                                <Label Text="{Binding TaskName}"
                                 FontSize="24"/>
                             </Frame>
                         </Grid>
@@ -61,4 +63,4 @@
         </CollectionView>
     </Grid>
 </ContentPage>
-    
+

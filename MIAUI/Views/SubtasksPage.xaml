@@ -4,13 +4,21 @@
              x:Class="MIAUI.Views.SubtasksPage"
              x:DataType="viewmodel:SubtasksViewModel"
              xmlns:viewmodel="clr-namespace:MIAUI.ViewModels"
-             Title="Details">
+             Title="{Binding TaskName}">
     <VerticalStackLayout>
-        <Label 
-            Text="Details"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center"/>
-        <Button Text="Ok"
-                Command="{Binding GoBackCommand}"/>
+        <Editor
+            Placeholder ="Details"
+            Text="{Binding DetailsInfo}"
+            Grid.Row="1"/>
+        <Label
+            Text="{Binding DetailsInfo}"
+            FontSize="24" />
+        <!--" VerticalOptions="Center" 
+            HorizontalOptions="Center"/> -->
+        <Button Text="Save"
+                Command="{Binding SaveDetailsCommand}"/>
+        <Button Text="Back"
+                Command="{Binding GoBackCommand}" />
     </VerticalStackLayout>
 </ContentPage>
+
