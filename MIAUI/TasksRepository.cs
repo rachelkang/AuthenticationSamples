@@ -21,14 +21,14 @@ public class TasksRepository
             return;
 
         conn = new SQLiteConnection(_dbPath);
-        conn.CreateTable<Model.Task>();
+        conn.CreateTable<Task>();
     }
     
     public TasksRepository(string dbPath)
     {
         _dbPath = dbPath;
     }
-    public async void AddNewTask(string taskName)
+    public void AddNewTask(string taskName)
     {
         int result = 0;
         try
@@ -41,40 +41,11 @@ public class TasksRepository
             result = conn.Insert(new Model.Task(taskName));
             result = 0;
 
-            Console.WriteLine(string.Format("{0} record(s) added (Name: {1})", result, taskName));
+            StatusMessage = string.Format("{0} record(s) added (Name: {1})", result, taskName);
         }
         catch (Exception ex)
         {
-            Console.WriteLine(string.Format("Failed to add {0}. Error: {1}", taskName, ex.Message));
+            StatusMessage = string.Format("Failed to add {0}. Error: {1}", taskName, ex.Message);
         }
-    }
-
-    public int UpdateDetails(Model.Task task)
-    {
-        int result = 0;
-        result = conn.Update(task);
-        return result;
-    }
-
-    public int DeleteTask(int id)
-    {
-        int result = 0;
-        result = conn.Delete<Model.Task>(id);
-        return result;
-    }
-
-    public List<Model.Task> GetAllTasks()
-    {
-        try
-        {
-            Init();
-            return conn.Table<Model.Task>().ToList();
-        }
-        catch (Exception ex)
-        {
-            StatusMessage = string.Format("Failed to retrieve data. {0}", ex.Message);
-        }
-
-        return new List<Model.Task>();
     }
 }
