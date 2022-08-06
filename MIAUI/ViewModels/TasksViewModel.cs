@@ -1,4 +1,8 @@
-﻿namespace MIAUI.ViewModels;
+﻿using SQLite;
+using MIAUI.Model;
+
+namespace MIAUI.ViewModels;
+
 
 
 [INotifyPropertyChanged]
@@ -6,7 +10,8 @@ public partial class TasksViewModel
 {
     public TasksViewModel()
     {
-        Items = new ObservableCollection<MIAUI.Model.Task>();
+        Items = new ObservableCollection<Model.Task>();
+        //fetch from database and fill items
     }
 
     [ObservableProperty]
