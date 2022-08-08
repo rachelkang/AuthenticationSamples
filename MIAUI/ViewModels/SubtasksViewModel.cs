@@ -30,6 +30,7 @@ public partial class SubtasksViewModel
         if (string.IsNullOrWhiteSpace(DetailsInfo))
             return;
         //add TaskName
+        App.TaskRepo.AddNewDetails(DetailsInfo);
         Details.Add(DetailsInfo);
         DetailsInfo = string.Empty;
     }

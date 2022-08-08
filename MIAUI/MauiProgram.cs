@@ -20,6 +20,9 @@ public static class MauiProgram
 		builder.Services.AddSingleton<LoginViewModel>();
 		builder.Services.AddTransient<SubtasksViewModel>();
 
+        string dbPath = FileAccessHelper.GetLocalFilePath("Task.db3"); ;
+        builder.Services.AddSingleton<TasksRepository>(s => ActivatorUtilities.CreateInstance<TasksRepository>(s, dbPath));
+        
 		return builder.Build();
 	}
 }

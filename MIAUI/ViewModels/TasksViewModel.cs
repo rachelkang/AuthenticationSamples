@@ -26,6 +26,7 @@ public partial class TasksViewModel
 
         if (string.IsNullOrWhiteSpace(TaskName))
             return;
+        App.TaskRepo.AddNewTask(TaskName);
         Items.Add(new Model.Task(TaskName));
         TaskName = string.Empty;
 

@@ -48,4 +48,25 @@ public class TasksRepository
             StatusMessage = string.Format("Failed to add {0}. Error: {1}", taskName, ex.Message);
         }
     }
+
+    public void AddNewDetails(string details)
+    {
+        int result = 0;
+        try
+        {
+            Init();
+            // basic validation to ensure a name was entered
+            if (string.IsNullOrEmpty(details))
+                throw new Exception("Valid name required");
+
+            result = conn.Insert(new Model.Task(details));
+            result = 0;
+
+            StatusMessage = string.Format("{0} record(s) added (Details: {1})", result, details);
+        }
+        catch (Exception ex)
+        {
+            StatusMessage = string.Format("Failed to add {0}. Error: {1}", details, ex.Message);
+        }
+    }
 }
