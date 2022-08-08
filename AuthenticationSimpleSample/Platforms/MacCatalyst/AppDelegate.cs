@@ -1,6 +1,7 @@
 ﻿using Foundation;
 using Microsoft.Identity.Client;
 using UIKit;
+using AuthenticationServices;
 
 namespace AuthenticationSimpleSample;
 

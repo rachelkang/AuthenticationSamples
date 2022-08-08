@@ -32,11 +32,13 @@
 
 	 <PropertyGroup Condition="$(TargetFramework.Contains('-ios')) and '$(Configuration)' == 'Debug'">
 		<RuntimeIdentifier Condition=" $(TargetFramework.Contains('-ios')) ">ios-arm64</RuntimeIdentifier>
-		<CodesignKey>iPhone Distribution: TJ Lambert (5JB5PPL47W)</CodesignKey>
-		<CodesignProvision>MIAUIAuthenticationProfile</CodesignProvision>
+		<CodesignKey>Apple Development: TJ Lambert (859KC8VWG2)</CodesignKey>
+		<CodesignProvision>MauiAzureAuthProvProfile</CodesignProvision>
 		<CodesignEntiltement>Entitlements</CodesignEntiltement>
 		<ArchiveOnBuild>true</ArchiveOnBuild>
 		<TcpPort>58181</TcpPort>
+		<_DotNetRootRemoteDirectory>/usr/local/share/dotnet/sdk</_DotNetRootRemoteDirectory>
+
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -74,10 +76,10 @@
 
 	<ItemGroup>
 	  <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
-	  <PackageReference Include="Microsoft.Maui.Dependencies" Version="6.0.408" />
-	  <PackageReference Include="Microsoft.Maui.Extensions" Version="6.0.408" />
+	  <PackageReference Include="Microsoft.Maui.Dependencies" Version="6.0.424" />
+	  <PackageReference Include="Microsoft.Maui.Extensions" Version="6.0.424" />
 	  <PackageReference Include="Microsoft.Identity.Client" Version="4.46.0-preview2" />
-	  <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.21.0" />
+	  <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.22.0" />
 	</ItemGroup>
 
 
