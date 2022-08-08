@@ -6,7 +6,7 @@ public partial class SubtasksViewModel
 {
     public SubtasksViewModel()
     {
-        Details = new ObservableCollection<string>();
+        Details = new ObservableCollection<Task>();
     }
 
     [ObservableProperty]
@@ -27,12 +27,13 @@ public partial class SubtasksViewModel
     [RelayCommand]
     void SaveDetails()
     {
+        Details.Clear();
         if (string.IsNullOrWhiteSpace(DetailsInfo))
             return;
         //add TaskName
         App.TaskRepo.AddNewDetails(DetailsInfo);
         Details.Add(DetailsInfo);
-        DetailsInfo = string.Empty;
+        //DetailsInfo = string.Empty;
     }
 
 }
