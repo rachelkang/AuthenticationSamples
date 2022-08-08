@@ -19,7 +19,7 @@ public class Task
         //Subtasks = new ObservableCollection<Subtask>();
     }
 
-    public Task(string taskName, string details)
+    public void Subtask(string taskName, string details)
     {
         Details = details;
         TaskName = taskName;

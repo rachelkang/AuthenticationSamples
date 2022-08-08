@@ -6,7 +6,7 @@ public partial class SubtasksViewModel
 {
     public SubtasksViewModel()
     {
-        Details = new ObservableCollection<Task>();
+        Details = new ObservableCollection<string>();
     }
 
     [ObservableProperty]
