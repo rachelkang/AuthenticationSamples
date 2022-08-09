@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MIAUI.Views.NewTaskPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="New Task"
+             Visual="Material"
+             xmlns:viewmodel="clr-namespace:MIAUI.ViewModels"
+             xmlns:model="clr-namespace:MIAUI.Model"
+             x:DataType="viewmodel:TasksViewModel">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to DotNet MAUI!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="New" Command="{Binding AddCommand}" />
+    </ContentPage.ToolbarItems>
+    <Grid RowDefinitions="100, Auto, *"
+          ColumnDefinitions=".75*, .25*"
+          RowSpacing="10"
+          ColumnSpacing="10">
+
+        <Image Grid.ColumnSpan="2"
+               Source="dotnet_bot.png"/>
+        <Entry Placeholder="Enter task"
+               Text="{Binding TaskName}"
+               Grid.Row="1"/>
+        <Button Text="Add"
+                Grid.Row="1"
+                Grid.Column="1"
+                Command="{Binding AddCommand}"/>
+        <CollectionView Grid.Row="2" Grid.ColumnSpan="2"
+                        ItemsSource="{Binding Items}"
+                        SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Task">
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Delete"
+                                       BackgroundColor="Red"
+                                       Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:TasksViewModel}}, Path=DeleteCommand}"
+                                       CommandParameter="{Binding TaskName}"/>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Grid Padding="0.5">
+                            <Frame>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:TasksViewModel}}, Path=TapCommand}"
+                                       CommandParameter="{Binding TaskName}"/>
+                                </Frame.GestureRecognizers>
+                                <Label Text="{Binding TaskName}"
+                                FontSize="24"/>
+                            </Frame>
+                        </Grid>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
+
