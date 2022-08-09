@@ -1,0 +1,86 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net6.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
+		<OutputType>Exe</OutputType>
+		<RootNamespace>AuthenticationSimpleSample</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Display name -->
+		<ApplicationTitle>AuthenticationSimpleSample</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.authenticationsimplesample</ApplicationId>
+		<ApplicationIdGuid>C71C3246-87CA-41CE-83DD-6D8181D37B86</ApplicationIdGuid>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	 <PropertyGroup Condition="$(TargetFramework.Contains('-ios')) and '$(Configuration)' == 'Debug'">
+		<RuntimeIdentifier Condition=" $(TargetFramework.Contains('-ios')) ">ios-arm64</RuntimeIdentifier>
+		<CodesignKey>Apple Development: TJ Lambert (859KC8VWG2)</CodesignKey>
+		<CodesignProvision>MauiAzureAuthProvProfile</CodesignProvision>
+		<CodesignEntiltement>Entitlements</CodesignEntiltement>
+		<ArchiveOnBuild>true</ArchiveOnBuild>
+		<TcpPort>58181</TcpPort>
+		<_DotNetRootRemoteDirectory>/usr/local/share/dotnet/sdk</_DotNetRootRemoteDirectory>
+
+	</PropertyGroup>
+
+	<PropertyGroup>
+        <ApplicationId>com.companyname.authenticationsimplesample</ApplicationId>
+        <ApplicationVersion>1</ApplicationVersion>
+    </PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\Fonts\SF-Pro-Italic.ttf" />
+	  <None Remove="Resources\Fonts\SF-Pro.ttf" />
+	  <None Remove="Microsoft.Maui.Dependencies" />
+	  <None Remove="Microsoft.Maui.Extensions" />
+	  <None Remove="Microsoft.Identity.Client" />
+	  <None Remove="Microsoft.IdentityModel.Clients.ActiveDirectory" />
+	  <None Remove="Microsoft.Identity.Client.Extensions.Msal" />
+	  <None Remove="Microsoft.Identity.Web" />
+	  <None Remove="System.IdentityModel.Tokens.Jwt" />
+	  <None Remove="Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
+	  <PackageReference Include="Microsoft.Maui.Dependencies" Version="6.0.424" />
+	  <PackageReference Include="Microsoft.Maui.Extensions" Version="6.0.424" />
+	  <PackageReference Include="Microsoft.Identity.Client" Version="4.46.0-preview2" />
+	  <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.22.0" />
+	</ItemGroup>
+
+
+</Project>

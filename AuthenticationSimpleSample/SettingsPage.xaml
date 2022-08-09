@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AuthenticationSimpleSample.SettingsPage"
+             Title="SettingsPage">
+    <StackLayout Padding="30" Spacing="10">
+        <Label Text="Profile"
+               FontSize="Medium"
+               TextColor="Black"
+               FontFamily="MainFont"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" />
+
+        <Label x:Name ="SettingsInfo" Text="" />
+
+        <!--TODO-->
+        <!--Make the users profile appear on this page instead of the main page-->
+        <Grid Padding="20" RowSpacing="10" RowDefinitions="50, 150, *">
+            <HorizontalStackLayout Grid.Row="0" Spacing="10">
+                <Label Text="Name: " FontFamily="MainFont" FontAttributes="Bold" />
+                <Label x:Name="ProfileName" Text="Profile name should be displayed here.." FontFamily="MainFont" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Grid.Row="1" Spacing="10">
+                <Label Text="Email: " FontFamily="MainFont" FontAttributes="Bold" />
+                <Label x:Name="ProfileEmaii" Text="Profile email should be displyed here.." FontFamily="MainFont"/>
+            </HorizontalStackLayout>
+        </Grid>
+
+        <!--TODO-->
+        <!--Get the user to log out of the account and return back to the home page-->
+        <Button x:Name="LogOutBtn"
+                Text="Log out"
+                BackgroundColor="{StaticResource MainColor}"
+                FontFamily="MainFont"
+                HorizontalOptions="Center"/>
+
+        <!--TODO-->
+        <!--Navigate somewhere else (additional)-->
+        <Button Text="Navigate somewhere..."
+                BackgroundColor="{StaticResource MainColor}"
+                FontFamily="MainFont"
+                Clicked="Back"
+                HorizontalOptions="Center" />
+    </StackLayout>
+</ContentPage>
