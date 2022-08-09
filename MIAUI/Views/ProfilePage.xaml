@@ -2,10 +2,23 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MIAUI.Views.ProfilePage"
-             Title="ProfilePage">
-    <StackLayout>
-        <Label Text="Welcome to .NET MAUI!"
-                VerticalOptions="Center" 
+             Title="Profile Page">
+    <StackLayout Padding="30" Spacing="10">
+        <Label Text="Profile"
+               FontSize="Medium"
+               TextColor="Black"
+               FontFamily="MainFont"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" />
+
+        <Label Text="{Binding User.Name, StringFormat='Name {0}'}" 
+               FontFamily="MainFont" FontAttributes="Bold" />
+
+        <Label Text="{Binding User.Email, StringFormat='Email: {0}'}" 
+               FontFamily="MainFont" FontAttributes="Bold" />
+
+        <Button Text="Log out"
+                FontFamily="MainFont"
                 HorizontalOptions="Center" />
     </StackLayout>
 </ContentPage>

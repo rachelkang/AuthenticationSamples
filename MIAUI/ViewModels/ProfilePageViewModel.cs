@@ -1,14 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MIAUI.Model;
 
 namespace MIAUI.ViewModels;
-public partial class ProfilePageViewModel
+
+[QueryProperty(nameof(User), nameof(User))]
+public partial class ProfilePageViewModel : ObservableObject
 {
     // Diosplay info here
+    [ObservableProperty]
+    User user;
 
 
+    [RelayCommand]
+    async void LogOutBtn()
+    {
 
+    }
 }

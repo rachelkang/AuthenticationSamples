@@ -60,6 +60,10 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        <Button x:Name="ProfileBtn"
+                Text="Profile Page"
+                Command="{Binding NavToProfilePageCommand}"
+                Grid.Row="2"/>
     </Grid>
 </ContentPage>
 
