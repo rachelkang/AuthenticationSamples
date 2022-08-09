@@ -55,7 +55,7 @@ public class AuthService
             if (data is not null)
             {
                 user.Name = data.Claims.FirstOrDefault(x => x.Type.Equals("name"))?.Value;
-                user.Email = data.Claims.FirstOrDefault(x => x.Type.Equals("preferred_username"))?.Value;
+                user.Email = data.Claims.FirstOrDefault(x => x.Type.Equals("emails"))?.Value;
             }
         }
     }

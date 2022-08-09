@@ -1,9 +1,15 @@
-﻿namespace MIAUI.ViewModels;
+﻿using MIAUI.Model;
+
+namespace MIAUI.ViewModels;
 
 
 [INotifyPropertyChanged]
+[QueryProperty(nameof(User), nameof(User))]
 public partial class TasksViewModel
 {
+    [ObservableProperty]
+    User user;
+
     public TasksViewModel()
     {
         Items = new ObservableCollection<MIAUI.Model.Task>();
@@ -43,5 +49,14 @@ public partial class TasksViewModel
     {
         await Shell.Current.GoToAsync($"{nameof(SubtasksPage)}?TaskName={s}");
     }
-}
 
+    [RelayCommand]
+    async Task NavToProfilePage()
+    {
+        await Shell.Current.GoToAsync($"{nameof(ProfilePage)}",
+                new Dictionary<string, object>
+                {
+                    [nameof(User)] = user
+                });
+    }
+}
