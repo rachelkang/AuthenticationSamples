@@ -8,13 +8,18 @@
     
     <VerticalStackLayout Spacing="10">
         <Label 
-            Text="It's MIAU or NEVER!"
+            Text="Welcome to MIAUI!"
             VerticalOptions="Center" 
-            HorizontalOptions="Center"/>
+            HorizontalOptions="Center"
+            FontSize="34"
+            TextColor="#8258ba"/>
         
-        <Image Source="dotnet_bot.svg"/>
+        <Image Source="logo_miaui.png"
+               Aspect="AspectFit"
+               WidthRequest="450"
+               HeightRequest="450"/>
         
-        <Label Text="Welcome to MIAUI!" 
+        <Label Text="It's MEOW or NEVER" 
                FontSize="28" TextColor="Gray" 
                HorizontalTextAlignment="Center"/>
         
@@ -26,12 +31,12 @@
                 HorizontalOptions="Center" 
                 CornerRadius="16"
                 Command="{Binding LogInCommand}"
-                BackgroundColor="{StaticResource MainColor}"
+                BackgroundColor="#8258ba"
                 />
         <StackLayout Orientation="Horizontal">
             <!-- Tentative pop-up window for explanation/credits? -->
             <Label Text="First time? " TextColor="Gray" HorizontalTextAlignment="Center" />
-            <Label Text="Click here" TextColor="Purple" HorizontalTextAlignment="Center"/>
+            <Label Text="Click here" TextColor="#8258ba" HorizontalTextAlignment="Center"/>
         </StackLayout>
         
     </VerticalStackLayout>

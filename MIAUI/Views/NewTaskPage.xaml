@@ -28,8 +28,7 @@
                FontSize="20"
                HorizontalOptions="EndAndExpand"/>
         <Image Grid.ColumnSpan="2"
-               Source="dotnet_bot.png"
-               HorizontalOptions="Center"/>
+               Source="slogan_miaui.png"/>
         <Entry Placeholder="Enter task"
                Text="{Binding TaskName}"
                Grid.Row="1"/>
