@@ -24,7 +24,7 @@
           ColumnSpacing="10">
 
         <Image Grid.ColumnSpan="2"
-               Source="dotnet_bot.png"/>
+               Source="slogan_miaui.png"/>
         <Entry Placeholder="Enter task"
                Text="{Binding TaskName}"
                Grid.Row="1"/>
