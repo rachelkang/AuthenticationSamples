@@ -43,14 +43,14 @@
                                 <SwipeItem Text="Delete"
                                        BackgroundColor="Red"
                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:TasksViewModel}}, Path=DeleteCommand}"
-                                       CommandParameter="{Binding TaskName}"/>
+                                       CommandParameter="{Binding .}"/>
                             </SwipeItems>
                         </SwipeView.RightItems>
                         <Grid Padding="0.5">
                             <Frame>
                                 <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:TasksViewModel}}, Path=TapCommand}"
-                                       CommandParameter="{Binding TaskName}"/>
+                                       CommandParameter="{Binding .}"/>
                                 </Frame.GestureRecognizers>
                                 <Label Text="{Binding TaskName}"
                                 FontSize="24"/>
@@ -62,4 +62,3 @@
         </CollectionView>
     </Grid>
 </ContentPage>
-
