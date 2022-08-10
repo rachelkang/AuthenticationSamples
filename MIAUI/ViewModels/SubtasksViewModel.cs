@@ -4,6 +4,7 @@ namespace MIAUI.ViewModels;
 
 [INotifyPropertyChanged]
 [QueryProperty(nameof(Task), "Task")]
+[QueryProperty(nameof(TaskName), "TaskName")]
 [QueryProperty(nameof(DetailsInfo), "Details")]
 public partial class SubtasksViewModel
 {
@@ -17,6 +18,9 @@ public partial class SubtasksViewModel
 
     [ObservableProperty]
     int id;
+
+    [ObservableProperty]
+    string taskName;
 
     [ObservableProperty]
     string detailsInfo;

@@ -5,9 +5,9 @@
              x:DataType="viewmodel:SubtasksViewModel"
              xmlns:viewmodel="clr-namespace:MIAUI.ViewModels">
     <VerticalStackLayout>
-       <!-- <Label Text="{Binding TaskName}" 
+       <Label Text="{Binding TaskName}" 
             FontSize="34"
-            HorizontalOptions="Start"/> -->
+            HorizontalOptions="Start"/> 
         <Editor
             Placeholder ="Insert Task details here!"
             Text="{Binding DetailsInfo}"

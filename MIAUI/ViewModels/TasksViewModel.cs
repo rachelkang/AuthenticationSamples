@@ -1,5 +1,6 @@
 ﻿using SQLite;
 using MIAUI.Model;
+//using Kotlin.Properties;
 
 namespace MIAUI.ViewModels;
 
@@ -12,12 +13,14 @@ public partial class TasksViewModel
     {
         var list = App.TaskRepo.GetAllTasks();
         Items = new ObservableCollection<Model.Task>(list);
-        //Items = new ObservableCollection<Model.Task>();
         //fetch from database and fill items
     }
 
     [ObservableProperty]
     ObservableCollection<MIAUI.Model.Task> items;
+
+    [ObservableProperty]
+    DateTime today = DateTime.Today;
 
 
     [ObservableProperty]
@@ -41,11 +44,6 @@ public partial class TasksViewModel
     //This delete method needs to interact with the database
     void Delete(Model.Task task)
     {
-        //var taskList = App.TaskRepo.GetAllTasks();
-        /*if (Items.Contains(s))
-        {
-            Items.Remove(s);
-        }*/
 
         App.TaskRepo.DeleteTask(task.Id);
         Items.Remove(task);
@@ -58,9 +56,9 @@ public partial class TasksViewModel
                     new Dictionary<string, object>
                     {
                         [nameof(Task)] = Task,
+                        ["TaskName"] = Task.TaskName,
                         ["Details"] = Task.Details
-                    });
-       // await Shell.Current.GoToAsync($"{nameof(SubtasksPage)}?Task={Task}");
+                    }); ;
     }
 }
 
