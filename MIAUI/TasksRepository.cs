@@ -21,14 +21,14 @@ public class TasksRepository
             return;
 
         conn = new SQLiteConnection(_dbPath);
-        conn.CreateTable<Task>();
+        conn.CreateTable<Model.Task>();
     }
     
     public TasksRepository(string dbPath)
     {
         _dbPath = dbPath;
     }
-    public void AddNewTask(string taskName)
+    public async void AddNewTask(string taskName)
     {
         int result = 0;
         try
@@ -41,11 +41,61 @@ public class TasksRepository
             result = conn.Insert(new Model.Task(taskName));
             result = 0;
 
-            StatusMessage = string.Format("{0} record(s) added (Name: {1})", result, taskName);
+            Console.WriteLine(string.Format("{0} record(s) added (Name: {1})", result, taskName));
         }
         catch (Exception ex)
         {
-            StatusMessage = string.Format("Failed to add {0}. Error: {1}", taskName, ex.Message);
+            Console.WriteLine(string.Format("Failed to add {0}. Error: {1}", taskName, ex.Message));
         }
+    }
+
+    public int UpdateDetails(Model.Task task)
+    {
+        int result = 0;
+        result = conn.Update(task);
+        return result;
+    }
+
+    public int DeleteTask(int id)
+    {
+        int result = 0;
+        result = conn.Delete<Model.Task>(id);
+        return result;
+    }
+
+    /* public void AddNewDetails( string details) //Model.Task t, string details)
+    {
+        int result = 0;
+        try
+        {
+            Init();
+            // basic validation to ensure a name was entered
+            if (string.IsNullOrEmpty(details))
+                throw new Exception("Input valid task detail");
+
+            result = conn.Update(new Model.Task() { Details = details});
+            result = 0;
+
+            //StatusMessage = string.Format("{0} record(s) added (Details: {1})", result, details);
+        }
+        catch (Exception ex)
+        {
+            //StatusMessage = string.Format("Failed to add {0}. Error: {1}", details, ex.Message);
+        }
+    } */
+
+    public List<Model.Task> GetAllTasks()
+    {
+        try
+        {
+            Init();
+            return conn.Table<Model.Task>().ToList();
+        }
+        catch (Exception ex)
+        {
+            StatusMessage = string.Format("Failed to retrieve data. {0}", ex.Message);
+        }
+
+        return new List<Model.Task>();
     }
 }

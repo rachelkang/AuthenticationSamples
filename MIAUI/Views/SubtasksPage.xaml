@@ -3,22 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MIAUI.Views.SubtasksPage"
              x:DataType="viewmodel:SubtasksViewModel"
-             xmlns:viewmodel="clr-namespace:MIAUI.ViewModels"
-             Title="{Binding TaskName}">
+             xmlns:viewmodel="clr-namespace:MIAUI.ViewModels">
     <VerticalStackLayout>
+       <!-- <Label Text="{Binding TaskName}" 
+            FontSize="34"
+            HorizontalOptions="Start"/> -->
         <Editor
-            Placeholder ="Details"
+            Placeholder ="Insert Task details here!"
             Text="{Binding DetailsInfo}"
+            FontSize="24"
             Grid.Row="1"/>
-        <Label
-            Text="{Binding DetailsInfo}"
-            FontSize="24" />
-        <!--" VerticalOptions="Center" 
-            HorizontalOptions="Center"/> -->
         <Button Text="Save"
                 Command="{Binding SaveDetailsCommand}"/>
         <Button Text="Back"
                 Command="{Binding GoBackCommand}" />
     </VerticalStackLayout>
 </ContentPage>
-
