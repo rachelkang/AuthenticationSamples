@@ -22,7 +22,11 @@
           ColumnDefinitions=".75*, .25*"
           RowSpacing="10"
           ColumnSpacing="10">
-
+        <Label Text="MIAUI: Home"
+               FontSize="34" />
+        <Label Text="{Binding Today}"
+               FontSize="20"
+               HorizontalOptions="EndAndExpand"/>
         <Image Grid.ColumnSpan="2"
                Source="slogan_miaui.png"/>
         <Entry Placeholder="Enter task"
