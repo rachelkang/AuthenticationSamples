@@ -57,7 +57,8 @@ public partial class TasksViewModel
         await Shell.Current.GoToAsync($"{nameof(SubtasksPage)}",
                     new Dictionary<string, object>
                     {
-                        [nameof(Task)] = Task
+                        [nameof(Task)] = Task,
+                        ["Details"] = Task.Details
                     });
        // await Shell.Current.GoToAsync($"{nameof(SubtasksPage)}?Task={Task}");
     }

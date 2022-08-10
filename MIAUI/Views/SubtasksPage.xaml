@@ -4,30 +4,15 @@
              x:Class="MIAUI.Views.SubtasksPage"
              x:DataType="viewmodel:SubtasksViewModel"
              xmlns:viewmodel="clr-namespace:MIAUI.ViewModels">
-    <!-- Title="{Binding TaskName}"--> 
     <VerticalStackLayout>
        <!-- <Label Text="{Binding TaskName}" 
             FontSize="34"
             HorizontalOptions="Start"/> -->
         <Editor
-            Placeholder ="Details"
+            Placeholder ="Insert Task details here!"
             Text="{Binding DetailsInfo}"
+            FontSize="24"
             Grid.Row="1"/>
-        <StackLayout>
-            <CollectionView Grid.Row="2" Grid.ColumnSpan="2"
-                        ItemsSource="{Binding Details}"
-                        SelectionMode="None">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="viewmodel:SubtasksViewModel">
-                        <Label
-                        Text="{Binding DetailsInfo}"
-                        FontSize="24" />
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </StackLayout>
-        <!--" VerticalOptions="Center" 
-            HorizontalOptions="Center"/> -->
         <Button Text="Save"
                 Command="{Binding SaveDetailsCommand}"/>
         <Button Text="Back"
