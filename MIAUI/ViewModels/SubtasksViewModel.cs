@@ -4,6 +4,7 @@ namespace MIAUI.ViewModels;
 
 [INotifyPropertyChanged]
 [QueryProperty(nameof(Task), "Task")]
+[QueryProperty(nameof(TaskName), "TaskName")]
 [QueryProperty(nameof(DetailsInfo), "Details")]
 public partial class SubtasksViewModel
 {
@@ -14,6 +15,9 @@ public partial class SubtasksViewModel
 
     [ObservableProperty]
     Model.Task task;
+
+    [ObservableProperty]
+    string taskName;
 
     [ObservableProperty]
     int id;
@@ -30,15 +34,12 @@ public partial class SubtasksViewModel
     [RelayCommand]
     void SaveDetails()
     {
-        //Details.Clear();
         if (string.IsNullOrWhiteSpace(DetailsInfo))
             return;
         //add TaskName
         Task.Details = DetailsInfo;
         App.TaskRepo.UpdateDetails(Task);
         var taskList = App.TaskRepo.GetAllTasks();
-        //Details.Add(DetailsInfo);
-        //DetailsInfo = string.Empty;
     }
 
 }

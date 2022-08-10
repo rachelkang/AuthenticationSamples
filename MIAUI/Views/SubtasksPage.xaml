@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MIAUI.Views.SubtasksPage"
              x:DataType="viewmodel:SubtasksViewModel"
              xmlns:viewmodel="clr-namespace:MIAUI.ViewModels">
     <VerticalStackLayout>
-       <!-- <Label Text="{Binding TaskName}" 
+        <Label Text="{Binding TaskName}" 
             FontSize="34"
-            HorizontalOptions="Start"/> -->
+            HorizontalOptions="Start"/>
         <Editor
             Placeholder ="Insert Task details here!"
             Text="{Binding DetailsInfo}"

@@ -22,9 +22,14 @@
           ColumnDefinitions=".75*, .25*"
           RowSpacing="10"
           ColumnSpacing="10">
-
+        <Label Text="MIAUI: Home"
+               FontSize="34" />
+        <Label Text="{Binding Today}"
+               FontSize="20"
+               HorizontalOptions="EndAndExpand"/>
         <Image Grid.ColumnSpan="2"
-               Source="dotnet_bot.png"/>
+               Source="dotnet_bot.png"
+               HorizontalOptions="Center"/>
         <Entry Placeholder="Enter task"
                Text="{Binding TaskName}"
                Grid.Row="1"/>

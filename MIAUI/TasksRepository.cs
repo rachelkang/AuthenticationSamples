@@ -63,27 +63,6 @@ public class TasksRepository
         return result;
     }
 
-    /* public void AddNewDetails( string details) //Model.Task t, string details)
-    {
-        int result = 0;
-        try
-        {
-            Init();
-            // basic validation to ensure a name was entered
-            if (string.IsNullOrEmpty(details))
-                throw new Exception("Input valid task detail");
-
-            result = conn.Update(new Model.Task() { Details = details});
-            result = 0;
-
-            //StatusMessage = string.Format("{0} record(s) added (Details: {1})", result, details);
-        }
-        catch (Exception ex)
-        {
-            //StatusMessage = string.Format("Failed to add {0}. Error: {1}", details, ex.Message);
-        }
-    } */
-
     public List<Model.Task> GetAllTasks()
     {
         try
