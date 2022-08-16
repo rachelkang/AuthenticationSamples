@@ -13,7 +13,7 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-		builder.Services.AddTransient<MainLoginPage>();
+		builder.Services.AddTransient<LoginPage>();
 		builder.Services.AddSingleton<LoginViewModel>();
 
         string dbPath = FileAccessHelper.GetLocalFilePath("Task.db3"); ;

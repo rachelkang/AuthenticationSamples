@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodel="clr-namespace:MIAUI.ViewModels"
-             x:Class="MIAUI.Views.MainLoginPage"
+             x:Class="MIAUI.Views.LoginPage"
              x:DataType="viewmodel:LoginViewModel"
              Title="Login Page">
     
