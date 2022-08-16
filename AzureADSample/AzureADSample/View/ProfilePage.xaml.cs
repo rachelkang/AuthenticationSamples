@@ -6,9 +6,9 @@ namespace AzureADSample.Views;
 
 public partial class ProfilePage : ContentPage
 {
-	public ProfilePage()
+	public ProfilePage ()
 	{
-		InitializeComponent();
-		BindingContext = new ProfilePageViewModel();
+		InitializeComponent ();
+		BindingContext = new ProfilePageViewModel ();
 	}
 }
