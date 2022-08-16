@@ -31,3 +31,7 @@ Built in .NET MAUI and used Azure AD for Auth Service. This sample only demonstr
 ## Nugget Packages
 - `Microsoft.Identity.Client`
 - `System.IdentityModel.Tokens.Jwt`
+
+For more information about the sample see:
+- [Build a .NET MAUI app with Azure](https://docs.microsoft.com/en-us/azure/developer/mobile-apps/azure-mobile-apps/quickstarts/maui/authentication)
+- [Intro to Azure AD Tenants](https://docs.microsoft.com/en-us/microsoft-365/education/deploy/intro-azure-active-directory)
