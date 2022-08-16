@@ -1,6 +1,4 @@
-﻿using MIAUI.Model;
-
-namespace MIAUI.ViewModels;
+﻿namespace MIAUI.ViewModels;
 
 [INotifyPropertyChanged]
 [QueryProperty(nameof(Task), "Task")]

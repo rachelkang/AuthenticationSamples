@@ -1,5 +1,4 @@
-﻿using MIAUI.Model;
-using MIAUI.Service;
+﻿using MIAUI.Service;
 
 namespace MIAUI.ViewModels;
 

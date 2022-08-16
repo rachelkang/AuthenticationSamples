@@ -1,9 +1,4 @@
-﻿using SQLite;
-using MIAUI.Model;
-
-namespace MIAUI.ViewModels;
-
-
+﻿namespace MIAUI.ViewModels;
 
 [INotifyPropertyChanged]
 public partial class TasksViewModel

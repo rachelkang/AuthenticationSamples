@@ -1,6 +1,4 @@
-﻿using SQLite;
-
-namespace MIAUI.Model;
+﻿namespace MIAUI.Model;
 
 [Table("users")]
 public class User
