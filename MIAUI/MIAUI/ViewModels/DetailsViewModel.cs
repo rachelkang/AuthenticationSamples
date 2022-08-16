@@ -4,9 +4,9 @@
 [QueryProperty(nameof(Task), "Task")]
 [QueryProperty(nameof(TaskName), "TaskName")]
 [QueryProperty(nameof(DetailsInfo), "Details")]
-public partial class SubtasksViewModel
+public partial class DetailsViewModel
 {
-    public SubtasksViewModel()
+    public DetailsViewModel()
     {
         //Details = detailsInfo;
     }

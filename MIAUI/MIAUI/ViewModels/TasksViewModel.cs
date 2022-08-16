@@ -46,7 +46,7 @@ public partial class TasksViewModel
     [RelayCommand]
     async Task Tap(Model.Task Task)
     {
-        await Shell.Current.GoToAsync($"{nameof(SubtasksPage)}",
+        await Shell.Current.GoToAsync($"{nameof(DetailsPage)}",
                     new Dictionary<string, object>
                     {
                         [nameof(Task)] = Task,
