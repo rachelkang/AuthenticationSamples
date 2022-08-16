@@ -1,3 +1,16 @@
+---
+name: .NET MAUI - Simple Azure AD Authentication Sample
+description: "This sample only demostrates Authentication with using Azure AD (Microsoft Login Only)"
+page_type: sample
+languages: 
+- csharp
+- xaml
+products:
+- dotnet-maui 
+- dotnet-core
+urlFragment: authentication
+---
+
 <h1 align="center">Simple Azure AD Authentication Sample</h1>
 
 <div align="center">
