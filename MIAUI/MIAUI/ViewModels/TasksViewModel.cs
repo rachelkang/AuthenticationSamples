@@ -3,10 +3,10 @@
 [INotifyPropertyChanged]
 public partial class TasksViewModel
 {
-    public TasksViewModel()
+    public TasksViewModel ()
     {
-        var list = App.TaskRepo.GetAllTasks();
-        Items = new ObservableCollection<Model.Task>(list);
+        var list = App.TaskRepo.GetAllTasks ();
+        Items = new ObservableCollection<Model.Task> (list);
         //fetch from database and fill items
     }
 
@@ -21,13 +21,13 @@ public partial class TasksViewModel
     string taskName;
 
     [RelayCommand]
-    void Add()
+    void Add ()
     {
 
         if (string.IsNullOrWhiteSpace(TaskName))
             return;
-        App.TaskRepo.AddNewTask(TaskName);
-        Items.Add(new Model.Task(TaskName));
+        App.TaskRepo.AddNewTask (TaskName);
+        Items.Add (new Model.Task (TaskName));
         TaskName = string.Empty;
 
 
@@ -36,20 +36,20 @@ public partial class TasksViewModel
     [RelayCommand]
 
     //This delete method needs to interact with the database
-    void Delete(Model.Task task)
+    void Delete (Model.Task task)
     {
 
-        App.TaskRepo.DeleteTask(task.Id);
-        Items.Remove(task);
+        App.TaskRepo.DeleteTask (task.Id);
+        Items.Remove (task);
     }
 
     [RelayCommand]
-    async Task Tap(Model.Task Task)
+    async Task Tap (Model.Task Task)
     {
-        await Shell.Current.GoToAsync($"{nameof(DetailsPage)}",
+        await Shell.Current.GoToAsync ($"{nameof(DetailsPage)}",
                     new Dictionary<string, object>
                     {
-                        [nameof(Task)] = Task,
+                        [nameof (Task)] = Task,
                         ["TaskName"] = Task.TaskName,
                         ["Details"] = Task.Details
                     }); ;

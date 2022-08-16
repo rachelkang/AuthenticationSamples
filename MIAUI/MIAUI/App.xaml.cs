@@ -3,11 +3,11 @@
 public partial class App : Application
 {
     public static TasksRepository TaskRepo { get; private set; }
-    public App(TasksRepository task)
+    public App (TasksRepository task)
 	{
-		InitializeComponent();
+		InitializeComponent ();
 
-		MainPage = new AppShell();
+		MainPage = new AppShell ();
 
 		TaskRepo = task;
 	}

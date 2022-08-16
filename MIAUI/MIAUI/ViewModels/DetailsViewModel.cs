@@ -1,12 +1,12 @@
 ﻿namespace MIAUI.ViewModels;
 
 [INotifyPropertyChanged]
-[QueryProperty(nameof(Task), "Task")]
-[QueryProperty(nameof(TaskName), "TaskName")]
-[QueryProperty(nameof(DetailsInfo), "Details")]
+[QueryProperty(nameof (Task), "Task")]
+[QueryProperty(nameof (TaskName), "TaskName")]
+[QueryProperty(nameof (DetailsInfo), "Details")]
 public partial class DetailsViewModel
 {
-    public DetailsViewModel()
+    public DetailsViewModel ()
     {
         //Details = detailsInfo;
     }
@@ -24,20 +24,20 @@ public partial class DetailsViewModel
     string detailsInfo;
 
     [RelayCommand]
-    async Task GoBack()
+    async Task GoBack ()
     {
-        await Shell.Current.GoToAsync("..");
+        await Shell.Current.GoToAsync ("..");
     }
 
     [RelayCommand]
-    void SaveDetails()
+    void SaveDetails ()
     {
-        if (string.IsNullOrWhiteSpace(DetailsInfo))
+        if (string.IsNullOrWhiteSpace (DetailsInfo))
             return;
         //add TaskName
         Task.Details = DetailsInfo;
-        App.TaskRepo.UpdateDetails(Task);
-        var taskList = App.TaskRepo.GetAllTasks();
+        App.TaskRepo.UpdateDetails (Task);
+        var taskList = App.TaskRepo.GetAllTasks ();
     }
 
 }

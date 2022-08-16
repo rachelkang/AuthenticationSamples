@@ -1,10 +1,10 @@
 namespace MIAUI.Views;
 
-public partial class NewTaskPage : ContentPage
+public partial class TasksPage : ContentPage
 {
-	public NewTaskPage()
+	public TasksPage ()
 	{
-		InitializeComponent();
-		BindingContext = new TasksViewModel();
+		InitializeComponent ();
+		BindingContext = new TasksViewModel ();
 	}
 }

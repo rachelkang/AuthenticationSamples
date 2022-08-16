@@ -2,9 +2,9 @@ namespace MIAUI.Views;
 
 public partial class LoginPage : ContentPage
 {
-	public LoginPage(LoginViewModel vm)
+	public LoginPage (LoginViewModel vm)
 	{
-		InitializeComponent();
+		InitializeComponent ();
 		BindingContext = vm;
 	}
 }

@@ -2,9 +2,9 @@ namespace MIAUI.Views;
 
 public partial class DetailsPage : ContentPage
 {
-	public DetailsPage()
+	public DetailsPage ()
 	{
-		InitializeComponent();
-		BindingContext = new DetailsViewModel();
+		InitializeComponent ();
+		BindingContext = new DetailsViewModel ();
 	}
 }
