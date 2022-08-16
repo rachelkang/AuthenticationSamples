@@ -1,9 +1,4 @@
-﻿using AzureADSample.Model;
-using AzureADSample.Service;
-using AzureADSample.Views;
-using Microsoft.Identity.Client;
-
-namespace AzureADSample;
+﻿namespace AzureADSample;
 
 public partial class MainPage : ContentPage
 {

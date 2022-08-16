@@ -1,9 +1,4 @@
-﻿using AzureADSample.Model;
-using AzureADSample.Service;
-using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
-using Microsoft.Identity.Client;
-
+﻿
 namespace AzureADSample.ViewModel;
 
 [INotifyPropertyChanged]

@@ -1,6 +1,4 @@
-﻿using AzureADSample.Model;
-using Microsoft.Identity.Client;
-using System.IdentityModel.Tokens.Jwt;
+﻿using System.IdentityModel.Tokens.Jwt;
 
 namespace AzureADSample.Service;
 public class AuthService

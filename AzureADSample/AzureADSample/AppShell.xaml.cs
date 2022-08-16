@@ -1,6 +1,4 @@
-﻿using AzureADSample.Views;
-
-namespace AzureADSample;
+﻿namespace AzureADSample;
 
 public partial class AppShell : Shell
 {

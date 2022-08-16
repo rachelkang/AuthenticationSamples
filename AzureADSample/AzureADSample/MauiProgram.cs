@@ -1,8 +1,4 @@
-﻿using AzureADSample.ViewModel;
-using AzureADSample.Views;
-
-namespace AzureADSample;
-
+﻿namespace AzureADSample;
 public static class MauiProgram
 {
 	public static MauiApp CreateMauiApp ()
