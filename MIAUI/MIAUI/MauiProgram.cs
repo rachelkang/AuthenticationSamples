@@ -13,12 +13,8 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-		builder.Services.AddSingleton<NewTaskPage>();
-		builder.Services.AddTransient<SubtasksPage>();
 		builder.Services.AddTransient<MainLoginPage>();
-
 		builder.Services.AddSingleton<LoginViewModel>();
-		builder.Services.AddTransient<SubtasksViewModel>();
 
         string dbPath = FileAccessHelper.GetLocalFilePath("Task.db3"); ;
         builder.Services.AddSingleton<TasksRepository>(s => ActivatorUtilities.CreateInstance<TasksRepository>(s, dbPath));
