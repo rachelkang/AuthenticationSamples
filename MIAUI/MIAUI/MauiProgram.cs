@@ -1,4 +1,6 @@
-﻿namespace MIAUI;
+﻿using MIAUI.Data;
+
+namespace MIAUI;
 
 public static class MauiProgram
 {
@@ -16,9 +18,13 @@ public static class MauiProgram
 		builder.Services.AddTransient<LoginPage> ();
 		builder.Services.AddSingleton<LoginViewModel> ();
 
-        string dbPath = FileAccessHelper.GetLocalFilePath ("Task.db3"); ;
+        string dbPath = GetLocalFilePath ("Task.db3"); ;
         builder.Services.AddSingleton<TasksRepository> (s => ActivatorUtilities.CreateInstance<TasksRepository> (s, dbPath));
         
 		return builder.Build ();
 	}
+    public static string GetLocalFilePath(string filename)
+    {
+        return System.IO.Path.Combine(FileSystem.AppDataDirectory, filename);
+    }
 }

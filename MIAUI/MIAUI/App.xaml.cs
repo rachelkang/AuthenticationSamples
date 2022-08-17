@@ -1,4 +1,6 @@
-﻿namespace MIAUI;
+﻿using MIAUI.Data;
+
+namespace MIAUI;
 
 public partial class App : Application
 {
