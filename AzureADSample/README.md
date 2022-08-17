@@ -14,7 +14,8 @@ urlFragment: authentication
 <h1 align="center">Simple Azure AD Authentication Sample</h1>
 
 <div align="center">
-Built in .NET MAUI and used Azure AD for Auth Service. This sample only demonstrates Authentication with using Azure AD (Microsoft Login Only) </br></br>
+Built in .NET MAUI and used Azure AD for Auth Service. This sample only demonstrates Authentication using Azure AD and the [Microsoft Authentication Library](https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-overview) (MSAL for Microsoft Login Only) </br>
+This sample currently works for Windows and Android</br></br>
 </div>
 
 ##  MSAL Login
@@ -32,6 +33,11 @@ Built in .NET MAUI and used Azure AD for Auth Service. This sample only demonstr
 - `Microsoft.Identity.Client`
 - `System.IdentityModel.Tokens.Jwt`
 
+Before running the app:
+- [Create project and deploy the backend](https://docs.microsoft.com/en-us/azure/developer/mobile-apps/azure-mobile-apps/quickstarts/maui/#deploy-the-backend-to-azure)
+- [Register the application](https://docs.microsoft.com/en-us/azure/developer/mobile-apps/azure-mobile-apps/quickstarts/maui/#deploy-the-backend-to-azure)
+After completing these steps you will be able to retrieve a ClientId from the Azure AD Directory that should be using in the Services/Constants.cs file
+
+
 For more information about the sample see:
-- [Build a .NET MAUI app with Azure](https://docs.microsoft.com/en-us/azure/developer/mobile-apps/azure-mobile-apps/quickstarts/maui/authentication)
 - [Intro to Azure AD Tenants](https://docs.microsoft.com/en-us/microsoft-365/education/deploy/intro-azure-active-directory)
