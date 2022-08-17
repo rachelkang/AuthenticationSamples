@@ -17,6 +17,22 @@ This sample demonstrates how to implement authentication using Azure AD B2C to l
 This sample currently works on Windows, Android and iOS </br></br>
 </div>
 
+## Login Page
+<p align="center">
+    <img width="450" src=./Screenshots/login.png>
+</p>
+
+## Azure Login Page
+This page is prompted after clicking the login button
+<p align="center">
+    <img width="450" src=./Screenshots/login2.png>
+</p>
+
+## Setting Page
+<p align="center">
+    <img width="450" src=./Screenshots/settingsPage.png>
+</p>
+
 Before running the app:
 - [Create project and deploy the backend](https://docs.microsoft.com/en-us/azure/developer/mobile-apps/azure-mobile-apps/quickstarts/maui/#deploy-the-backend-to-azure)
 - [Register the application](https://docs.microsoft.com/en-us/azure/developer/mobile-apps/azure-mobile-apps/quickstarts/maui/#deploy-the-backend-to-azure)
