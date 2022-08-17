@@ -14,7 +14,7 @@ urlFragment: authentication-AD
 <h1 align="center">Simple Azure AD Authentication Sample</h1>
 
 <div align="center">
-Built in .NET MAUI and used Azure AD for Auth Service. This sample only demonstrates Authentication using Azure AD and the [Microsoft Authentication Library](https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-overview) (MSAL for Microsoft Login Only) </br>
+Built in .NET MAUI and used Azure AD for Auth Service. This sample only demonstrates Authentication using the [Azure Active Directory (AD)](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis) and the [Microsoft Authentication Library (MSAL)](https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-overview (MSAL for Microsoft Login Only) </br>
 This sample currently works for Windows and Android</br></br>
 </div>
 
@@ -29,7 +29,7 @@ This sample currently works for Windows and Android</br></br>
 </p>
 
 
-## Nugget Packages
+## Nuget Packages
 - `Microsoft.Identity.Client`
 - `System.IdentityModel.Tokens.Jwt`
 
@@ -40,4 +40,6 @@ After completing these steps you will be able to retrieve a ClientId from the Az
 
 
 For more information about the sample see:
+- [What is Azure AD](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis)
+- [What is MSAL](https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-overview)
 - [Intro to Azure AD Tenants](https://docs.microsoft.com/en-us/microsoft-365/education/deploy/intro-azure-active-directory)
