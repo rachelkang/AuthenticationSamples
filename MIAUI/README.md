@@ -8,7 +8,7 @@ languages:
 products:
 - dotnet-maui
 - dotnet-core
-urlFragment: animations
+urlFragment: authentication-MIAUI
 ---
 
 # MIAUI
