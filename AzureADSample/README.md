@@ -8,7 +8,7 @@ languages:
 products:
 - dotnet-maui 
 - dotnet-core
-urlFragment: authentication
+urlFragment: authentication-AD
 ---
 
 <h1 align="center">Simple Azure AD Authentication Sample</h1>
