@@ -7,11 +7,10 @@ public partial class TasksViewModel
     {
         var list = App.TaskRepo.GetAllTasks ();
         Items = new ObservableCollection<Model.Task> (list);
-        //fetch from database and fill items
     }
 
     [ObservableProperty]
-    ObservableCollection<MIAUI.Model.Task> items;
+    ObservableCollection<Model.Task> items;
 
     [ObservableProperty]
     DateTime today = DateTime.Today;
@@ -24,7 +23,7 @@ public partial class TasksViewModel
     void Add ()
     {
 
-        if (string.IsNullOrWhiteSpace(TaskName))
+        if (string.IsNullOrWhiteSpace (TaskName))
             return;
         App.TaskRepo.AddNewTask (TaskName);
         Items.Add (new Model.Task (TaskName));

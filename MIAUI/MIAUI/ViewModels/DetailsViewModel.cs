@@ -8,7 +8,7 @@ public partial class DetailsViewModel
 {
     public DetailsViewModel ()
     {
-        //Details = detailsInfo;
+
     }
 
     [ObservableProperty]
@@ -34,10 +34,8 @@ public partial class DetailsViewModel
     {
         if (string.IsNullOrWhiteSpace (DetailsInfo))
             return;
-        //add TaskName
         Task.Details = DetailsInfo;
         App.TaskRepo.UpdateDetails (Task);
         var taskList = App.TaskRepo.GetAllTasks ();
     }
-
 }

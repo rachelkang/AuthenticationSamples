@@ -23,10 +23,10 @@ public partial class LoginViewModel : ObservableObject
             if (result is not null)
             {
                 await App.Current.MainPage.DisplayAlert ("Success", "Successfully logged in", "Ok");
-                await Shell.Current.GoToAsync ($"{nameof(TasksPage)}",
+                await Shell.Current.GoToAsync ($"{nameof (TasksPage)}",
                 new Dictionary<string, object>
                 {
-                    [nameof(User)] = user
+                    [nameof (User)] = user
                 });
                 await App.Current.MainPage.DisplayAlert ($"Welcome {user.Name}", "", "Ok");
             }

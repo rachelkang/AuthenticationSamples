@@ -7,30 +7,30 @@ public class TasksRepository
 
     private SQLiteConnection conn;
 
-    private void Init()
+    private void Init ()
     {
-        if (conn != null)
+        if (conn is not null)
             return;
 
-        conn = new SQLiteConnection(_dbPath);
-        conn.CreateTable<Model.Task>();
+        conn = new SQLiteConnection (_dbPath);
+        conn.CreateTable<Model.Task> ();
     }
 
-    public TasksRepository(string dbPath)
+    public TasksRepository (string dbPath)
     {
         _dbPath = dbPath;
     }
-    public async void AddNewTask(string taskName)
+    public async void AddNewTask (string taskName)
     {
         int result = 0;
         try
         {
-            Init();
+            Init ();
             // basic validation to ensure a name was entered
-            if (string.IsNullOrEmpty(taskName))
-                throw new Exception("Valid name required");
+            if (string.IsNullOrEmpty (taskName))
+                throw new Exception ("Valid name required");
 
-            result = conn.Insert(new Model.Task(taskName));
+            result = conn.Insert (new Model.Task(taskName));
             result = 0;
 
             Console.WriteLine(string.Format("{0} record(s) added (Name: {1})", result, taskName));
@@ -41,25 +41,21 @@ public class TasksRepository
         }
     }
 
-    public int UpdateDetails(Model.Task task)
+    public int UpdateDetails (Model.Task task)
     {
-        int result = 0;
-        result = conn.Update(task);
-        return result;
+        return conn.Update (task);
     }
 
-    public int DeleteTask(int id)
+    public int DeleteTask (int id)
     {
-        int result = 0;
-        result = conn.Delete<Model.Task>(id);
-        return result;
+        return conn.Delete<Model.Task> (id);
     }
 
-    public List<Model.Task> GetAllTasks()
+    public List<Model.Task> GetAllTasks ()
     {
         try
         {
-            Init();
+            Init ();
             return conn.Table<Model.Task>().ToList();
         }
         catch (Exception ex)
@@ -67,6 +63,6 @@ public class TasksRepository
             StatusMessage = string.Format("Failed to retrieve data. {0}", ex.Message);
         }
 
-        return new List<Model.Task>();
+        return new List<Model.Task> ();
     }
 }
