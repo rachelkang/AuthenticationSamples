@@ -22,7 +22,6 @@ public class TasksRepository
     }
     public async void AddNewTask (string taskName)
     {
-        int result = 0;
         try
         {
             Init ();
@@ -30,8 +29,7 @@ public class TasksRepository
             if (string.IsNullOrEmpty (taskName))
                 throw new Exception ("Valid name required");
 
-            result = conn.Insert (new Model.Task(taskName));
-            result = 0;
+            conn.Insert (new Model.Task(taskName));
 
             Console.WriteLine(string.Format("{0} record(s) added (Name: {1})", result, taskName));
         }

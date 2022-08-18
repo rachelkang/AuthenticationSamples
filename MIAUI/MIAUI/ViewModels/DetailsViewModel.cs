@@ -1,14 +1,13 @@
 ﻿namespace MIAUI.ViewModels;
 
 [INotifyPropertyChanged]
-[QueryProperty(nameof (Task), "Task")]
-[QueryProperty(nameof (TaskName), "TaskName")]
-[QueryProperty(nameof (DetailsInfo), "Details")]
+[QueryProperty (nameof (Task), "Task")]
+[QueryProperty (nameof (TaskName), "TaskName")]
+[QueryProperty (nameof (DetailsInfo), "Details")]
 public partial class DetailsViewModel
 {
     public DetailsViewModel ()
     {
-
     }
 
     [ObservableProperty]

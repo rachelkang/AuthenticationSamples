@@ -15,21 +15,17 @@ public partial class TasksViewModel
     [ObservableProperty]
     DateTime today = DateTime.Today;
 
-
     [ObservableProperty]
     string taskName;
 
     [RelayCommand]
     void Add ()
     {
-
         if (string.IsNullOrWhiteSpace (TaskName))
             return;
         App.TaskRepo.AddNewTask (TaskName);
         Items.Add (new Model.Task (TaskName));
         TaskName = string.Empty;
-
-
     }
 
     [RelayCommand]
@@ -37,7 +33,6 @@ public partial class TasksViewModel
     //This delete method needs to interact with the database
     void Delete (Model.Task task)
     {
-
         App.TaskRepo.DeleteTask (task.Id);
         Items.Remove (task);
     }
@@ -54,4 +49,3 @@ public partial class TasksViewModel
                     }); ;
     }
 }
-
