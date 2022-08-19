@@ -1,12 +1,10 @@
-﻿using AzureADSample.Views;
-
-namespace AzureADSample;
+﻿namespace AzureADSample;
 
 public partial class AppShell : Shell
 {
-    public AppShell()
+    public AppShell ()
     {
-        InitializeComponent();
-        Routing.RegisterRoute(nameof(ProfilePage), typeof(ProfilePage));
+        InitializeComponent ();
+        Routing.RegisterRoute (nameof (ProfilePage), typeof (ProfilePage));
     }
 }

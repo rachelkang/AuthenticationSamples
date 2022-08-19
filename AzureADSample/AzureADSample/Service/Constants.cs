@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AzureADSample.Service;
+﻿namespace AzureADSample.Service;
 
 public static class Constants
 {
     // All info can be found in your Azure AD directory
-    public static readonly string ClientId = "46ae553c-44c6-40bd-aded-daca74801f3e";
+    public static readonly string ClientId = "ClientId";
     public static readonly string[] Scopes = new string[] { "openid", "offline_access" };
 
     // This is for B2C
