@@ -3,7 +3,7 @@
 public static class Constants
 {
     // All info can be found in your Azure AD or B2C directory
-    public static readonly string ClientId = "ClientId"; // from App Registrations 
+    public static readonly string ClientId = "ClientId"; // Once you register your app you will be able to get a ClientId, subtitute here
     public static readonly string[] Scopes = new string[] { "openid", "offline_access" };
 
     // B2C
