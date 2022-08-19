@@ -29,7 +29,7 @@ This sample currently works for Windows and Android</br></br>
 </p>
 
 
-## Nuget Packages
+## NuGet Packages
 - `Microsoft.Identity.Client`
 - `System.IdentityModel.Tokens.Jwt`
 
