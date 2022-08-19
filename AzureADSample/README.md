@@ -36,7 +36,7 @@ This sample currently works for Windows and Android</br></br>
 Before running the app:
 - [Create project and deploy the backend](https://docs.microsoft.com/en-us/azure/developer/mobile-apps/azure-mobile-apps/quickstarts/maui/#deploy-the-backend-to-azure)
 - [Register the application](https://docs.microsoft.com/en-us/azure/developer/mobile-apps/azure-mobile-apps/quickstarts/maui/#deploy-the-backend-to-azure)
-After completing these steps you will be able to retrieve a ClientId from the Azure AD Directory that should be using in the Services/Constants.cs file
+After completing these steps you will be able to retrieve a ClientId from the Azure AD Directory that should be used in the Services/Constants.cs file
 
 
 For more information about the sample see:
