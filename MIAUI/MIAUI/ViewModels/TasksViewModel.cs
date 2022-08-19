@@ -30,7 +30,6 @@ public partial class TasksViewModel
 
     [RelayCommand]
 
-    //This delete method needs to interact with the database
     void Delete (Model.Task task)
     {
         App.TaskRepo.DeleteTask (task.Id);
@@ -40,7 +39,7 @@ public partial class TasksViewModel
     [RelayCommand]
     async Task Tap (Model.Task Task)
     {
-        await Shell.Current.GoToAsync ($"{nameof(DetailsPage)}",
+        await Shell.Current.GoToAsync ($"{nameof (DetailsPage)}",
                     new Dictionary<string, object>
                     {
                         [nameof (Task)] = Task,
