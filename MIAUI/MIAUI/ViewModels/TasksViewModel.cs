@@ -29,7 +29,6 @@ public partial class TasksViewModel
     }
 
     [RelayCommand]
-
     void Delete (Model.Task task)
     {
         App.TaskRepo.DeleteTask (task.Id);
