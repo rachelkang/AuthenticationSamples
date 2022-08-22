@@ -59,25 +59,28 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Views\SubtasksPage.xaml.cs">
-	    <DependentUpon>SubtasksPage.xaml</DependentUpon>
+	  <Compile Update="Views\LoginPage.xaml.cs">
+	    <DependentUpon>LoginPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Views\NewTaskPage.xaml.cs">
-	    <DependentUpon>NewTaskPage.xaml</DependentUpon>
+	  <Compile Update="Views\DetailsPage.xaml.cs">
+	    <DependentUpon>DetailsPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\TasksPage.xaml.cs">
+	    <DependentUpon>TasksPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\MainLoginPage.xaml">
+	  <MauiXaml Update="Views\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ProfilePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\SubtasksPage.xaml">
+	  <MauiXaml Update="Views\DetailsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\NewTaskPage.xaml">
+	  <MauiXaml Update="Views\TasksPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

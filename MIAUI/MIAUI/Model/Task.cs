@@ -1,7 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using SQLite;
-
-namespace MIAUI.Model;
+﻿namespace MIAUI.Model;
 
 [Table("tasks")]
 public class Task
