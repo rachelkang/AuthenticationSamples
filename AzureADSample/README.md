@@ -33,6 +33,7 @@ This sample currently works for Windows and Android</br></br>
 - `Microsoft.Identity.Client`
 - `System.IdentityModel.Tokens.Jwt`
 
+
 Before running the app:
 - [Create project and deploy the backend](https://docs.microsoft.com/en-us/azure/developer/mobile-apps/azure-mobile-apps/quickstarts/maui/#deploy-the-backend-to-azure)
 - [Register the application](https://docs.microsoft.com/en-us/azure/developer/mobile-apps/azure-mobile-apps/quickstarts/maui/#deploy-the-backend-to-azure)
