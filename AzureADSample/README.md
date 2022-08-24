@@ -14,7 +14,7 @@ urlFragment: authentication-AD
 <h1 align="center">Simple Azure AD Authentication Sample</h1>
 
 <div align="center">
-Built in .NET MAUI and used Azure AD for Auth Service. This sample only demonstrates Authentication using the [Azure Active Directory (AD)](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis) and the [Microsoft Authentication Library (MSAL)](https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-overview (MSAL for Microsoft Login Only) </br>
+Built in .NET MAUI and used Azure AD for Auth Service. This sample only demonstrates Authentication using the [Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis) and the [Microsoft Authentication Library](https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-overview (MSAL for Microsoft Login Only) </br>
 This sample currently works for Windows and Android</br></br>
 </div>
 
@@ -35,10 +35,13 @@ This sample currently works for Windows and Android</br></br>
 
 
 Before running the app:
-- [Create project and deploy the backend](https://docs.microsoft.com/en-us/azure/developer/mobile-apps/azure-mobile-apps/quickstarts/maui/#deploy-the-backend-to-azure)
-- [Register the application](https://docs.microsoft.com/en-us/azure/developer/mobile-apps/azure-mobile-apps/quickstarts/maui/#deploy-the-backend-to-azure)
+- [Create project and deploy the backend](https://docs.microsoft.com/en-us/azure/developer/mobile-apps/azure-mobile-apps/quickstarts/maui)
+- [Register the application](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app)
 After completing these steps you will be able to retrieve a ClientId from the Azure AD Directory that should be used in the Services/Constants.cs file
 
+<p align="center">
+<img src="https://docs.microsoft.com/en-us/azure/active-directory/develop/media/quickstart-register-app/portal-03-app-reg-02.png"/>
+</p>
 
 For more information about the sample see:
 - [What is Azure AD](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis)
