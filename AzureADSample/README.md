@@ -13,10 +13,9 @@ urlFragment: authentication-AD
 
 <h1 align="center">Simple Azure AD Authentication Sample</h1>
 
-<div align="center">
-Built in .NET MAUI and used Azure AD for Auth Service. This sample only demonstrates Authentication using the [Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis) and the [Microsoft Authentication Library](https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-overview (MSAL for Microsoft Login Only) </br>
-This sample currently works for Windows and Android</br></br>
-</div>
+Built in .NET MAUI and used Azure AD for Auth Service. This sample only demonstrates Authentication using the [Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis) and the [Microsoft Authentication Library](https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-overview) (MSAL for Microsoft Login Only)
+This sample currently works for Windows and Android
+
 
 ##  MSAL Login
 <p align="center">
