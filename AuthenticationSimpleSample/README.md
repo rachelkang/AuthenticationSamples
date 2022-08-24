@@ -34,10 +34,11 @@ This page is prompted after clicking the login button
 </p>
 
 Before running the app:
-- [Create project and deploy the backend](https://docs.microsoft.com/en-us/azure/developer/mobile-apps/azure-mobile-apps/quickstarts/maui/#deploy-the-backend-to-azure)
-- [Register the application](https://docs.microsoft.com/en-us/azure/developer/mobile-apps/azure-mobile-apps/quickstarts/maui/#deploy-the-backend-to-azure)
+- [Create project and deploy the backend](https://docs.microsoft.com/en-us/azure/developer/mobile-apps/azure-mobile-apps/quickstarts/maui)
+- [Register the application](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications?tabs=app-reg-ga)
 After completing these steps you will be able to retrieve a ClientId from the Azure AD Directory that should be using in the Services/Constants.cs file
 
+![Get ClientID](https://docs.microsoft.com/en-us/azure/active-directory/develop/media/quickstart-register-app/portal-03-app-reg-02.png)
 
 For more information about the sample see:
 - [Set up Google - Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/identity-provider-github?WT.mc_id=Portal-Microsoft_AAD_B2CAdmin&pivots=b2c-user-flow)
